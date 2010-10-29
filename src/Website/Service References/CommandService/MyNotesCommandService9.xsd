@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Commands" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Commands" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/MyNotesCommandService/MyNotesCommandService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Ncqrs.Commanding" />
+  <xs:import schemaLocation="http://localhost/MyNotesCommandService/MyNotesCommandService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost/MyNotesCommandService/MyNotesCommandService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/CommonDTOs" />
+  <xs:import schemaLocation="http://localhost/MyNotesCommandService/MyNotesCommandService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="CreateNewNote">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Ncqrs.Commanding" base="q1:CommandBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateNewNote" nillable="true" type="tns:CreateNewNote" />
+  <xs:complexType name="ChangeNoteText">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Ncqrs.Commanding" base="q2:CommandBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NewText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NoteId" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChangeNoteText" nillable="true" type="tns:ChangeNoteText" />
+  <xs:complexType name="CreateBrief">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Ncqrs.Commanding" base="q3:CommandBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdMix" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AdObjective" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AdditionalInfo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ApprovalDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ApprovalNo" type="xs:int" />
+          <xs:element minOccurs="0" name="BillBoard" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Brand1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Brand2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Brand3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Brand4" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BriefDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="BriefNo" type="xs:int" />
+          <xs:element minOccurs="0" name="BriefStatus" type="xs:int" />
+          <xs:element minOccurs="0" name="BudgetTypes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BudgetValue" type="xs:decimal" />
+          <xs:element minOccurs="0" name="BusQShelter" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Buses" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ClientBusinessProfile" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CompetitionBrand1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CompetitionBrand2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CompetitionBrand3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CompetitionBrand4" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Complete" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ContactPerson" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactPersonId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Customer" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DateCreated" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DeadLineDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DisplayType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DisplayTypeSel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HeadPlannerUserId" type="ser:guid" />
+          <xs:element minOccurs="0" name="InPainting" type="xs:boolean" />
+          <xs:element minOccurs="0" name="InPrintBl" type="xs:boolean" />
+          <xs:element minOccurs="0" name="InPrintFl" type="xs:boolean" />
+          <xs:element minOccurs="0" name="InVinyl" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsApproved" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsInActive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LayoutAdapLimitations" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Market1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Market2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Market3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Market4" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MarketingObjective" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NoOfDays" type="xs:int" />
+          <xs:element minOccurs="0" name="NoOfMonths" type="xs:int" />
+          <xs:element minOccurs="0" name="NoOfYears" type="xs:int" />
+          <xs:element minOccurs="0" name="OsDays" type="xs:int" />
+          <xs:element minOccurs="0" name="OtherMediaVehicle" type="xs:boolean" />
+          <xs:element minOccurs="0" name="OtherStCommision" type="xs:int" />
+          <xs:element minOccurs="0" name="Others" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OutDoorObjective" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartVinyl" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PoleKiosks" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PreferredSize" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PreparedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PublicUtitities" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Ratio11" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Ratio12" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Ratio13" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Ratio14" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Ratio34" type="xs:boolean" />
+          <xs:element minOccurs="0" name="RatioAll" type="xs:boolean" />
+          <xs:element minOccurs="0" name="RequestSentToHO" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="SendDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="TargetGroupBrand1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TargetGroupBrand2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TargetGroupBrand3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TargetGroupBrand4" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TentativeEndDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="TentativeStartDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="TgsMedia1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TgsMedia2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TgsMedia3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TgsMedia4" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TransitMedia" type="xs:boolean" />
+          <xs:element minOccurs="0" name="TypeOfVehicles" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateBrief" nillable="true" type="tns:CreateBrief" />
+  <xs:complexType name="ChangeBrief">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Ncqrs.Commanding" base="q4:CommandBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdMix" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AdObjective" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AdditionalInfo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ApprovalDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ApprovalNo" type="xs:int" />
+          <xs:element minOccurs="0" name="BillBoard" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Brand1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Brand2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Brand3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Brand4" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BriefDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="BriefId" type="ser:guid" />
+          <xs:element minOccurs="0" name="BriefNo" type="xs:int" />
+          <xs:element minOccurs="0" name="BriefStatus" type="xs:int" />
+          <xs:element minOccurs="0" name="BudgetTypes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BudgetValue" type="xs:decimal" />
+          <xs:element minOccurs="0" name="BusQShelter" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Buses" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ClientBusinessProfile" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CompetitionBrand1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CompetitionBrand2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CompetitionBrand3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CompetitionBrand4" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Complete" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ContactPerson" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactPersonId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Customer" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DateCreated" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DeadLineDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DisplayType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DisplayTypeSel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HeadPlannerUserId" type="ser:guid" />
+          <xs:element minOccurs="0" name="InPainting" type="xs:boolean" />
+          <xs:element minOccurs="0" name="InPrintBl" type="xs:boolean" />
+          <xs:element minOccurs="0" name="InPrintFl" type="xs:boolean" />
+          <xs:element minOccurs="0" name="InVinyl" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsApproved" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsInActive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LayoutAdapLimitations" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Market1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Market2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Market3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Market4" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MarketingObjective" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NoOfDays" type="xs:int" />
+          <xs:element minOccurs="0" name="NoOfMonths" type="xs:int" />
+          <xs:element minOccurs="0" name="NoOfYears" type="xs:int" />
+          <xs:element minOccurs="0" name="OsDays" type="xs:int" />
+          <xs:element minOccurs="0" name="OtherMediaVehicle" type="xs:boolean" />
+          <xs:element minOccurs="0" name="OtherStCommision" type="xs:int" />
+          <xs:element minOccurs="0" name="Others" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OutDoorObjective" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartVinyl" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PoleKiosks" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PreferredSize" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PreparedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PublicUtitities" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Ratio11" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Ratio12" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Ratio13" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Ratio14" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Ratio34" type="xs:boolean" />
+          <xs:element minOccurs="0" name="RatioAll" type="xs:boolean" />
+          <xs:element minOccurs="0" name="RequestSentToHO" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="SendDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="TargetGroupBrand1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TargetGroupBrand2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TargetGroupBrand3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TargetGroupBrand4" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TentativeEndDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="TentativeStartDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="TgsMedia1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TgsMedia2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TgsMedia3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TgsMedia4" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TransitMedia" type="xs:boolean" />
+          <xs:element minOccurs="0" name="TypeOfVehicles" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChangeBrief" nillable="true" type="tns:ChangeBrief" />
+  <xs:complexType name="CreateBriefAllocation">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/Ncqrs.Commanding" base="q5:CommandBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BriefNo" type="xs:int" />
+          <xs:element minOccurs="0" name="CreatedOn" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="HeadPlannerId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PlanId" type="ser:guid" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/CommonDTOs" minOccurs="0" name="RegionCities" nillable="true" type="q6:ArrayOfRegionsAndCitiesDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateBriefAllocation" nillable="true" type="tns:CreateBriefAllocation" />
+  <xs:complexType name="EditBriefAllocation">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/Ncqrs.Commanding" base="q7:CommandBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BriefNo" type="xs:int" />
+          <xs:element minOccurs="0" name="CreatedOn" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="HeadPlannerId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PlanId" type="ser:guid" />
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/CommonDTOs" minOccurs="0" name="RegionCities" nillable="true" type="q8:ArrayOfRegionsAndCitiesDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EditBriefAllocation" nillable="true" type="tns:EditBriefAllocation" />
+  <xs:complexType name="CreatePlan">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/Ncqrs.Commanding" base="q9:CommandBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BriefNo" type="xs:int" />
+          <xs:element minOccurs="0" name="Budget" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ClientId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedOn" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="HeadPlannerId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PlanDetailsId" type="ser:guid" />
+          <xs:element minOccurs="0" name="PlanNo" type="xs:int" />
+          <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreatePlan" nillable="true" type="tns:CreatePlan" />
+  <xs:complexType name="EditPlan">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/Ncqrs.Commanding" base="q10:CommandBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BriefNo" type="xs:int" />
+          <xs:element minOccurs="0" name="Budget" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ClientId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedOn" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="HeadPlannerId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PlanDetailsId" type="ser:guid" />
+          <xs:element minOccurs="0" name="PlanNo" type="xs:int" />
+          <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EditPlan" nillable="true" type="tns:EditPlan" />
+  <xs:complexType name="CreateRegionInPlan">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/Ncqrs.Commanding" base="q11:CommandBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PlanDetailId" type="ser:guid" />
+          <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Regions" nillable="true" type="q12:ArrayOfKeyValueOfguidPlanRegionsDTOdv0GhODu" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateRegionInPlan" nillable="true" type="tns:CreateRegionInPlan" />
+  <xs:complexType name="CreateOrChangeCitiesInPlan">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/Ncqrs.Commanding" base="q13:CommandBase">
+        <xs:sequence>
+          <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Cities" nillable="true" type="q14:ArrayOfKeyValueOfguidPlanCityDTOdv0GhODu" />
+          <xs:element minOccurs="0" name="PlanDetailId" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateOrChangeCitiesInPlan" nillable="true" type="tns:CreateOrChangeCitiesInPlan" />
+  <xs:complexType name="CreateOrChangeSitesInPlan">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q15="http://schemas.datacontract.org/2004/07/Ncqrs.Commanding" base="q15:CommandBase">
+        <xs:sequence>
+          <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DeselectedSites" nillable="true" type="q16:ArrayOfKeyValueOfguidPlanSiteDTOdv0GhODu" />
+          <xs:element minOccurs="0" name="PlanDetailId" type="ser:guid" />
+          <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Sites" nillable="true" type="q17:ArrayOfKeyValueOfguidPlanSiteDTOdv0GhODu" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateOrChangeSitesInPlan" nillable="true" type="tns:CreateOrChangeSitesInPlan" />
+  <xs:complexType name="ChangeDisplayInfoForSite">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q18="http://schemas.datacontract.org/2004/07/Ncqrs.Commanding" base="q18:CommandBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PlanCityId" type="ser:guid" />
+          <xs:element minOccurs="0" name="PlanDetailsId" type="ser:guid" />
+          <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Sites" nillable="true" type="q19:ArrayOfKeyValueOfguidPlanSiteDisplayInfoDTOdv0GhODu" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChangeDisplayInfoForSite" nillable="true" type="tns:ChangeDisplayInfoForSite" />
+  <xs:complexType name="ChangeMountingInfoForSite">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q20="http://schemas.datacontract.org/2004/07/Ncqrs.Commanding" base="q20:CommandBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PlanCityId" type="ser:guid" />
+          <xs:element minOccurs="0" name="PlanDetailsId" type="ser:guid" />
+          <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Sites" nillable="true" type="q21:ArrayOfKeyValueOfguidPlanSiteMountingInfoDTOdv0GhODu" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChangeMountingInfoForSite" nillable="true" type="tns:ChangeMountingInfoForSite" />
+  <xs:complexType name="AssignVendorsToSite">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q22="http://schemas.datacontract.org/2004/07/Ncqrs.Commanding" base="q22:CommandBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PlanDetailsId" type="ser:guid" />
+          <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/CommonDTOs" minOccurs="0" name="Sites" nillable="true" type="q23:ArrayOfSiteVendorAssignmentDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AssignVendorsToSite" nillable="true" type="tns:AssignVendorsToSite" />
+  <xs:complexType name="CreatePlanAlbum">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q24="http://schemas.datacontract.org/2004/07/Ncqrs.Commanding" base="q24:CommandBase">
+        <xs:sequence>
+          <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/CommonDTOs" minOccurs="0" name="AttachedPhotos" nillable="true" type="q25:ArrayOfPhotoDetailDTO" />
+          <xs:element minOccurs="0" name="PlanDetailId" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreatePlanAlbum" nillable="true" type="tns:CreatePlanAlbum" />
+  <xs:complexType name="AddOrRemovePhotosFromPlanAlbum">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q26="http://schemas.datacontract.org/2004/07/Ncqrs.Commanding" base="q26:CommandBase">
+        <xs:sequence>
+          <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/CommonDTOs" minOccurs="0" name="AttachedPhotos" nillable="true" type="q27:ArrayOfPhotoDetailDTO" />
+          <xs:element minOccurs="0" name="PlanAlbumId" type="ser:guid" />
+          <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/CommonDTOs" minOccurs="0" name="RemovedPhotos" nillable="true" type="q28:ArrayOfPhotoDetailDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddOrRemovePhotosFromPlanAlbum" nillable="true" type="tns:AddOrRemovePhotosFromPlanAlbum" />
+  <xs:complexType name="AddOrRemovePhotosFromPlanCity">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q29="http://schemas.datacontract.org/2004/07/Ncqrs.Commanding" base="q29:CommandBase">
+        <xs:sequence>
+          <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/CommonDTOs" minOccurs="0" name="AttachedPhotos" nillable="true" type="q30:ArrayOfPhotoDetailDTO" />
+          <xs:element minOccurs="0" name="PlanAlbumId" type="ser:guid" />
+          <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/CommonDTOs" minOccurs="0" name="RemovedPhotos" nillable="true" type="q31:ArrayOfPhotoDetailDTO" />
+          <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/CommonDTOs" minOccurs="0" name="UploadedPhotos" nillable="true" type="q32:ArrayOfPhotoDetailDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddOrRemovePhotosFromPlanCity" nillable="true" type="tns:AddOrRemovePhotosFromPlanCity" />
+  <xs:complexType name="AddOrRemovePhotosFromPlanSite">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q33="http://schemas.datacontract.org/2004/07/Ncqrs.Commanding" base="q33:CommandBase">
+        <xs:sequence>
+          <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/CommonDTOs" minOccurs="0" name="AttachedPhotos" nillable="true" type="q34:ArrayOfPhotoDetailDTO" />
+          <xs:element minOccurs="0" name="PlanAlbumId" type="ser:guid" />
+          <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/CommonDTOs" minOccurs="0" name="RemovedPhotos" nillable="true" type="q35:ArrayOfPhotoDetailDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddOrRemovePhotosFromPlanSite" nillable="true" type="tns:AddOrRemovePhotosFromPlanSite" />
+</xs:schema>

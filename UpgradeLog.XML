@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="MyNotes">
+</Property><Property Name="Solution File" Value="D:\BizOS\ncqrs-ncqrs-Merged_Event_and_EventData_again-212-g74c9eff\ncqrs-ncqrs-74c9eff\Samples\MyNotes\MyNotes.sln">
+</Property><Property Name="Date" Value="Wednesday, September 01, 2010">
+</Property><Property Name="Time" Value="11:26:31 AM">
+</Property></Properties><Event ErrorLevel="0" Project="MvcGridView.Extensions" Source="src\MvcGridView.Extensions\MvcGridView.Extensions.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="MvcGridView.Extensions" Source="src\MvcGridView.Extensions\MvcGridView.Extensions.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="MvcGridView.Extensions" Source="src\MvcGridView.Extensions\MvcGridView.Extensions.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

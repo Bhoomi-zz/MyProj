@@ -1,0 +1,2084 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MyNotesReadModelModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="MyNotesReadModelModelStoreContainer">
+          <EntitySet Name="AllocatedRegionAndCities" EntityType="MyNotesReadModelModel.Store.AllocatedRegionAndCities" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="bmAddress" EntityType="MyNotesReadModelModel.Store.bmAddress" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="bmContact" EntityType="MyNotesReadModelModel.Store.bmContact" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="bmLocationHierarchy_bmLocation" EntityType="MyNotesReadModelModel.Store.bmLocationHierarchy_bmLocation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="bmUser" EntityType="MyNotesReadModelModel.Store.bmUser" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BriefAllocation" EntityType="MyNotesReadModelModel.Store.BriefAllocation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="NoteItem" EntityType="MyNotesReadModelModel.Store.NoteItem" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PlanAlbum" EntityType="MyNotesReadModelModel.Store.PlanAlbum" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PlanAlbumSitePhotos" EntityType="MyNotesReadModelModel.Store.PlanAlbumSitePhotos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PlanCities" EntityType="MyNotesReadModelModel.Store.PlanCities" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PlanDetails" EntityType="MyNotesReadModelModel.Store.PlanDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PlanRegion" EntityType="MyNotesReadModelModel.Store.PlanRegion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PlanSite" EntityType="MyNotesReadModelModel.Store.PlanSite" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ptmPlanVersionsCS" EntityType="MyNotesReadModelModel.Store.ptmPlanVersionsCS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Series" EntityType="MyNotesReadModelModel.Store.Series" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SeriesTransaction" EntityType="MyNotesReadModelModel.Store.SeriesTransaction" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SiteMaster" EntityType="MyNotesReadModelModel.Store.SiteMaster" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK__SeriesTra__serie__0D8054E0" Association="MyNotesReadModelModel.Store.FK__SeriesTra__serie__0D8054E0">
+            <End Role="Series" EntitySet="Series" />
+            <End Role="SeriesTransaction" EntitySet="SeriesTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="fk_AllocatedRegionAndCities_bmLocationHierarchy_bmLocation" Association="MyNotesReadModelModel.Store.fk_AllocatedRegionAndCities_bmLocationHierarchy_bmLocation">
+            <End Role="bmLocationHierarchy_bmLocation" EntitySet="bmLocationHierarchy_bmLocation" />
+            <End Role="AllocatedRegionAndCities" EntitySet="AllocatedRegionAndCities" />
+          </AssociationSet>
+          <AssociationSet Name="fk_AllocatedRegionAndCities_bmuser" Association="MyNotesReadModelModel.Store.fk_AllocatedRegionAndCities_bmuser">
+            <End Role="bmUser" EntitySet="bmUser" />
+            <End Role="AllocatedRegionAndCities" EntitySet="AllocatedRegionAndCities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AllocatedRegionAndCities_BriefAllocation" Association="MyNotesReadModelModel.Store.FK_AllocatedRegionAndCities_BriefAllocation">
+            <End Role="BriefAllocation" EntitySet="BriefAllocation" />
+            <End Role="AllocatedRegionAndCities" EntitySet="AllocatedRegionAndCities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_bmLocationHierarchy_bmLocation_bmLocationHierarchy_bmLocation" Association="MyNotesReadModelModel.Store.FK_bmLocationHierarchy_bmLocation_bmLocationHierarchy_bmLocation">
+            <End Role="bmLocationHierarchy_bmLocation" EntitySet="bmLocationHierarchy_bmLocation" />
+            <End Role="bmLocationHierarchy_bmLocation1" EntitySet="bmLocationHierarchy_bmLocation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BriefAllocation_bmuser" Association="MyNotesReadModelModel.Store.FK_BriefAllocation_bmuser">
+            <End Role="bmUser" EntitySet="bmUser" />
+            <End Role="BriefAllocation" EntitySet="BriefAllocation" />
+          </AssociationSet>
+          <AssociationSet Name="fk_plan_briefmaster_briefid" Association="MyNotesReadModelModel.Store.fk_plan_briefmaster_briefid">
+            <End Role="ptmPlanVersionsCS" EntitySet="ptmPlanVersionsCS" />
+            <End Role="PlanDetails" EntitySet="PlanDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_PlanAlbum_planDetailsId" Association="MyNotesReadModelModel.Store.fk_PlanAlbum_planDetailsId">
+            <End Role="PlanDetails" EntitySet="PlanDetails" />
+            <End Role="PlanAlbum" EntitySet="PlanAlbum" />
+          </AssociationSet>
+          <AssociationSet Name="fk_plancities_bmlocationhiearchy" Association="MyNotesReadModelModel.Store.fk_plancities_bmlocationhiearchy">
+            <End Role="bmLocationHierarchy_bmLocation" EntitySet="bmLocationHierarchy_bmLocation" />
+            <End Role="PlanCities" EntitySet="PlanCities" />
+          </AssociationSet>
+          <AssociationSet Name="fk_plancities_bmuser" Association="MyNotesReadModelModel.Store.fk_plancities_bmuser">
+            <End Role="bmUser" EntitySet="bmUser" />
+            <End Role="PlanCities" EntitySet="PlanCities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PlanCities_Locations" Association="MyNotesReadModelModel.Store.FK_PlanCities_Locations">
+            <End Role="bmLocationHierarchy_bmLocation" EntitySet="bmLocationHierarchy_bmLocation" />
+            <End Role="PlanCities" EntitySet="PlanCities" />
+          </AssociationSet>
+          <AssociationSet Name="fk_PlanRegion_plan" Association="MyNotesReadModelModel.Store.fk_PlanRegion_plan">
+            <End Role="PlanDetails" EntitySet="PlanDetails" />
+            <End Role="PlanRegion" EntitySet="PlanRegion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_planregion_plancities" Association="MyNotesReadModelModel.Store.fk_planregion_plancities">
+            <End Role="PlanRegion" EntitySet="PlanRegion" />
+            <End Role="PlanCities" EntitySet="PlanCities" />
+          </AssociationSet>
+          <AssociationSet Name="fk_plansite_bmcontact_printvendor" Association="MyNotesReadModelModel.Store.fk_plansite_bmcontact_printvendor">
+            <End Role="bmContact" EntitySet="bmContact" />
+            <End Role="PlanSite" EntitySet="PlanSite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Plansite_displayVendor1" Association="MyNotesReadModelModel.Store.FK_Plansite_displayVendor1">
+            <End Role="bmContact" EntitySet="bmContact" />
+            <End Role="PlanSite" EntitySet="PlanSite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Plansite_FabricationVendor" Association="MyNotesReadModelModel.Store.FK_Plansite_FabricationVendor">
+            <End Role="bmContact" EntitySet="bmContact" />
+            <End Role="PlanSite" EntitySet="PlanSite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Plansite_MountingVendor" Association="MyNotesReadModelModel.Store.FK_Plansite_MountingVendor">
+            <End Role="bmContact" EntitySet="bmContact" />
+            <End Role="PlanSite" EntitySet="PlanSite" />
+          </AssociationSet>
+          <AssociationSet Name="fk_plansite_plancity" Association="MyNotesReadModelModel.Store.fk_plansite_plancity">
+            <End Role="PlanCities" EntitySet="PlanCities" />
+            <End Role="PlanSite" EntitySet="PlanSite" />
+          </AssociationSet>
+          <AssociationSet Name="fk_plansite_SitePhotos" Association="MyNotesReadModelModel.Store.fk_plansite_SitePhotos">
+            <End Role="PlanSite" EntitySet="PlanSite" />
+            <End Role="PlanAlbumSitePhotos" EntitySet="PlanAlbumSitePhotos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_sitephotos_planalbum" Association="MyNotesReadModelModel.Store.fk_sitephotos_planalbum">
+            <End Role="PlanAlbum" EntitySet="PlanAlbum" />
+            <End Role="PlanAlbumSitePhotos" EntitySet="PlanAlbumSitePhotos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_sitephotos_plancities" Association="MyNotesReadModelModel.Store.fk_sitephotos_plancities">
+            <End Role="PlanCities" EntitySet="PlanCities" />
+            <End Role="PlanAlbumSitePhotos" EntitySet="PlanAlbumSitePhotos" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AllocatedRegionAndCities">
+          <Key>
+            <PropertyRef Name="AllocatedRegionAndCitiesId" />
+          </Key>
+          <Property Name="AllocatedRegionAndCitiesId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BriefAllocationId" Type="uniqueidentifier" />
+          <Property Name="Region" Type="varchar" MaxLength="5" />
+          <Property Name="LocationID" Type="char" MaxLength="41" />
+          <Property Name="PlannerID" Type="char" MaxLength="41" />
+          <Property Name="budget" Type="money" />
+        </EntityType>
+        <EntityType Name="bmAddress">
+          <Key>
+            <PropertyRef Name="sAddressID" />
+          </Key>
+          <Property Name="sAddressID" Type="char" Nullable="false" MaxLength="41" />
+          <Property Name="sTable" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="sAddressOfIDFK" Type="char" MaxLength="41" />
+          <Property Name="sAddressNatureIDFK" Type="char" MaxLength="41" />
+          <Property Name="sBuilding" Type="nvarchar" MaxLength="100" />
+          <Property Name="sStreet" Type="nvarchar" MaxLength="100" />
+          <Property Name="sLandMark" Type="nvarchar" MaxLength="100" />
+          <Property Name="sSuburb" Type="nvarchar" MaxLength="100" />
+          <Property Name="sCountry" Type="nvarchar" MaxLength="50" />
+          <Property Name="sState" Type="nvarchar" MaxLength="50" />
+          <Property Name="sCity" Type="nvarchar" MaxLength="50" />
+          <Property Name="sPinCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="sTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="sContactPerson" Type="nvarchar" MaxLength="50" />
+          <Property Name="sysCreatedBy" Type="char" MaxLength="41" />
+          <Property Name="sysCreatedOn" Type="datetime" />
+          <Property Name="sysUpdatedBy" Type="char" MaxLength="41" />
+          <Property Name="sysUpdatedOn" Type="datetime" />
+          <Property Name="nAddressID" Type="int" />
+          <Property Name="nAddressOfIDFK" Type="int" />
+          <Property Name="nRefNo" Type="int" />
+          <Property Name="sZoneidfk" Type="char" MaxLength="41" />
+        </EntityType>
+        <EntityType Name="bmContact">
+          <Key>
+            <PropertyRef Name="sContactId" />
+          </Key>
+          <Property Name="sContactId" Type="char" Nullable="false" MaxLength="41" />
+          <Property Name="sName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="sContactNatureIdFK" Type="char" MaxLength="41" />
+          <Property Name="sContactGroupIdFK" Type="char" MaxLength="41" />
+          <Property Name="nTransferToAc" Type="tinyint" />
+          <Property Name="sLocationIDFK" Type="char" MaxLength="41" />
+          <Property Name="sysCreatedBy" Type="char" MaxLength="41" />
+          <Property Name="sysCreatedOn" Type="datetime" />
+          <Property Name="sysUpdatedBy" Type="char" MaxLength="41" />
+          <Property Name="sysUpdatedOn" Type="datetime" />
+          <Property Name="sParentCompany" Type="varchar" MaxLength="100" />
+          <Property Name="nInUse" Type="tinyint" />
+          <Property Name="sPANGIRNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="sShortName" Type="nvarchar" MaxLength="10" />
+          <Property Name="sChequeType" Type="char" MaxLength="41" />
+          <Property Name="nServicetax" Type="decimal" Scale="2" />
+          <Property Name="sSupplierNatureIDFK" Type="char" MaxLength="41" />
+          <Property Name="sSalestaxIDFK" Type="char" MaxLength="41" />
+          <Property Name="sTDSIDFK" Type="char" MaxLength="41" />
+          <Property Name="nCessonServiceTax" Type="decimal" Scale="2" />
+          <Property Name="sServiceTaxCategoryIDFK" Type="char" MaxLength="41" />
+          <Property Name="sNegativeBalance" Type="nvarchar" MaxLength="2" />
+          <Property Name="bBankDetail" Type="tinyint" />
+          <Property Name="sStatus" Type="nvarchar" MaxLength="10" />
+          <Property Name="sPrintName" Type="nvarchar" MaxLength="100" />
+          <Property Name="sVatNo" Type="varchar" MaxLength="200" />
+          <Property Name="sExciseNo" Type="varchar" MaxLength="200" />
+          <Property Name="sTanNO" Type="varchar" MaxLength="200" />
+          <Property Name="sCstNO" Type="varchar" MaxLength="200" />
+          <Property Name="sServiceTaxNo" Type="varchar" MaxLength="200" />
+          <Property Name="sESICNo" Type="varchar" MaxLength="200" />
+          <Property Name="nServiceTaxCharged" Type="bit" />
+          <Property Name="sDivisionIDFK" Type="char" MaxLength="41" />
+          <Property Name="sSpecialCustomer" Type="nvarchar" MaxLength="1" />
+          <Property Name="sCustomerCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="sCustomerReference" Type="nvarchar" MaxLength="20" />
+          <Property Name="sDoctorRegNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="sDLNo1" Type="nvarchar" MaxLength="100" />
+          <Property Name="sDLNo2" Type="nvarchar" MaxLength="100" />
+          <Property Name="sDLNo3" Type="nvarchar" MaxLength="100" />
+          <Property Name="sCreditTerms" Type="nvarchar" MaxLength="100" />
+          <Property Name="nCreditLimit" Type="decimal" Scale="2" />
+          <Property Name="nTradeDiscount" Type="decimal" Scale="2" />
+          <Property Name="nOctroiPerc" Type="decimal" Scale="2" />
+          <Property Name="sBankBranchIDFK" Type="nvarchar" MaxLength="41" />
+          <Property Name="sHospitalRegNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="sBranchIDFK" Type="nvarchar" MaxLength="41" />
+          <Property Name="sSalesTeamIDFK" Type="nvarchar" MaxLength="41" />
+          <Property Name="sTransporterIDFK" Type="nvarchar" MaxLength="41" />
+          <Property Name="bConsignmentCustomer" Type="bit" />
+          <Property Name="sRCompanyIDFK" Type="char" MaxLength="41" />
+          <Property Name="sCompanyDivisionID" Type="char" MaxLength="41" />
+          <Property Name="EmailId" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="bmLocationHierarchy_bmLocation">
+          <Key>
+            <PropertyRef Name="sLocationID" />
+          </Key>
+          <Property Name="sLocationID" Type="char" Nullable="false" MaxLength="41" />
+          <Property Name="sLocationHierarchyIDFK" Type="char" MaxLength="41" />
+          <Property Name="sLocationName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="sLocationIDFK" Type="char" MaxLength="41" />
+          <Property Name="sDescription" Type="nvarchar" MaxLength="100" />
+          <Property Name="sCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="bHomeLocation" Type="tinyint" />
+          <Property Name="sLongitude" Type="nchar" MaxLength="20" />
+          <Property Name="sLatitude" Type="nchar" MaxLength="20" />
+          <Property Name="sysCreatedBy" Type="char" MaxLength="41" />
+          <Property Name="sysCreatedOn" Type="datetime" />
+          <Property Name="sysUpdatedBy" Type="char" MaxLength="41" />
+          <Property Name="sysUpdatedOn" Type="datetime" />
+          <Property Name="Region" Type="varchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="bmUser">
+          <Key>
+            <PropertyRef Name="sUserID" />
+          </Key>
+          <Property Name="sUserID" Type="char" Nullable="false" MaxLength="41" />
+          <Property Name="sUserName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="sLoginName" Type="nvarchar" MaxLength="25" />
+          <Property Name="sPassword" Type="nvarchar" MaxLength="200" />
+          <Property Name="bStatus" Type="int" />
+          <Property Name="bSystem" Type="bit" />
+          <Property Name="sEmployeeIDFK" Type="char" MaxLength="41" />
+        </EntityType>
+        <EntityType Name="BriefAllocation">
+          <Key>
+            <PropertyRef Name="BriefAllocationId" />
+          </Key>
+          <Property Name="BriefAllocationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="sBriefId" Type="char" MaxLength="41" />
+          <Property Name="BriefNo" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="HeadPlannerID" Type="char" MaxLength="41" />
+        </EntityType>
+        <EntityType Name="NoteItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Text" Type="varchar" MaxLength="250" />
+          <Property Name="CreationDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="PlanAlbum">
+          <Key>
+            <PropertyRef Name="planAlbumId" />
+          </Key>
+          <Property Name="planAlbumId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="planDetailsId" Type="uniqueidentifier" />
+          <Property Name="AlbumNo" Type="int" />
+        </EntityType>
+        <EntityType Name="PlanAlbumSitePhotos">
+          <Key>
+            <PropertyRef Name="PlanAlbumSitePhotosId" />
+          </Key>
+          <Property Name="PlanAlbumSitePhotosId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PlanSiteId" Type="uniqueidentifier" />
+          <Property Name="PlanCityId" Type="uniqueidentifier" />
+          <Property Name="PhotoName" Type="varchar" MaxLength="100" />
+          <Property Name="Title" Type="varchar" MaxLength="100" />
+          <Property Name="Tags" Type="varchar" MaxLength="200" />
+          <Property Name="bIsAssigned" Type="bit" />
+          <Property Name="planAlbumId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="PlanCities">
+          <Key>
+            <PropertyRef Name="PlanCitiesId" />
+          </Key>
+          <Property Name="PlanCitiesId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PlanRegion" Type="varchar" MaxLength="5" />
+          <Property Name="LocationID" Type="char" MaxLength="41" />
+          <Property Name="PlannerID" Type="char" MaxLength="41" />
+          <Property Name="Budget" Type="money" />
+          <Property Name="PlanDetailsId" Type="uniqueidentifier" />
+          <Property Name="PlanRegionId" Type="uniqueidentifier" />
+          <Property Name="PhotoAgId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="PlanDetails">
+          <Key>
+            <PropertyRef Name="PlanDetailsId" />
+          </Key>
+          <Property Name="PlanDetailsId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="sBriefId" Type="char" MaxLength="41" />
+          <Property Name="BriefNo" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="HeadPlannerID" Type="char" MaxLength="41" />
+          <Property Name="PlanNo" Type="int" Nullable="false" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="budget" Type="decimal" />
+          <Property Name="ContactId" Type="char" MaxLength="41" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="photoAgId" Type="uniqueidentifier" />
+          <Property Name="IsEmailSent" Type="bit" />
+        </EntityType>
+        <EntityType Name="PlanRegion">
+          <Key>
+            <PropertyRef Name="planRegionId" />
+          </Key>
+          <Property Name="planRegionId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Region" Type="varchar" MaxLength="5" />
+          <Property Name="PlanDetailsId" Type="uniqueidentifier" />
+          <Property Name="Budget" Type="money" />
+          <Property Name="PlannerId" Type="char" MaxLength="41" />
+        </EntityType>
+        <EntityType Name="PlanSite">
+          <Key>
+            <PropertyRef Name="planSiteId" />
+          </Key>
+          <Property Name="planSiteId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="siteNo" Type="int" />
+          <Property Name="siteName" Type="varchar" MaxLength="100" />
+          <Property Name="addressline1" Type="varchar" MaxLength="200" />
+          <Property Name="addressline2" Type="varchar" MaxLength="200" />
+          <Property Name="addressline3" Type="varchar" MaxLength="200" />
+          <Property Name="siteSize" Type="varchar" MaxLength="20" />
+          <Property Name="illumination" Type="varchar" MaxLength="20" />
+          <Property Name="H" Type="smallint" />
+          <Property Name="V" Type="smallint" />
+          <Property Name="SizeRatio" Type="varchar" MaxLength="20" />
+          <Property Name="MediaType" Type="varchar" MaxLength="20" />
+          <Property Name="NoOfFaces" Type="smallint" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="Days" Type="smallint" />
+          <Property Name="Qty" Type="smallint" />
+          <Property Name="DisplayVendor" Type="char" MaxLength="41" />
+          <Property Name="DisplayRate" Type="money" />
+          <Property Name="DisplayCost" Type="money" />
+          <Property Name="DisplayFromDate" Type="datetime" />
+          <Property Name="DisplayToDate" Type="datetime" />
+          <Property Name="ClientFromDate" Type="datetime" />
+          <Property Name="ClientToDate" Type="datetime" />
+          <Property Name="DisplayClientRate" Type="money" />
+          <Property Name="DisplayClientCost" Type="money" />
+          <Property Name="PrintRate" Type="money" />
+          <Property Name="PrintCost" Type="money" />
+          <Property Name="PrintSqFt" Type="smallint" />
+          <Property Name="PrintClientRate" Type="money" />
+          <Property Name="PrintClientCost" Type="money" />
+          <Property Name="FabricationVendor" Type="char" MaxLength="41" />
+          <Property Name="FabricationRate" Type="money" />
+          <Property Name="FabricationCost" Type="money" />
+          <Property Name="FabricationClientRate" Type="money" />
+          <Property Name="FabricationClientCost" Type="money" />
+          <Property Name="MountingVendor" Type="char" MaxLength="41" />
+          <Property Name="MountingRate" Type="money" />
+          <Property Name="MountingCost" Type="money" />
+          <Property Name="MountingClientRate" Type="money" />
+          <Property Name="MountingClientCost" Type="money" />
+          <Property Name="CreativeAppliedId" Type="int" />
+          <Property Name="CreativeDescription" Type="varchar" MaxLength="100" />
+          <Property Name="planCityId" Type="uniqueidentifier" />
+          <Property Name="IsInActive" Type="bit" Nullable="false" />
+          <Property Name="SiteSizeInSqFt" Type="decimal" />
+          <Property Name="DisplayStatus" Type="varchar" MaxLength="20" />
+          <Property Name="PrintVendor" Type="char" MaxLength="41" />
+          <Property Name="MountingStatus" Type="varchar" MaxLength="20" />
+          <Property Name="PrintingStatus" Type="varchar" MaxLength="20" />
+          <Property Name="FabricationStatus" Type="varchar" MaxLength="20" />
+          <Property Name="chargingBasis" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="ptmPlanVersionsCS">
+          <Key>
+            <PropertyRef Name="sPlanVersionsCSID" />
+          </Key>
+          <Property Name="sPlanVersionsCSID" Type="char" Nullable="false" MaxLength="41" />
+          <Property Name="sCompanyIdfk" Type="char" MaxLength="41" />
+          <Property Name="dtVoucher" Type="datetime" Nullable="false" />
+          <Property Name="nVoucher" Type="int" />
+          <Property Name="sPrefixFromList" Type="nvarchar" MaxLength="20" />
+          <Property Name="sPrefixFromText" Type="nvarchar" MaxLength="20" />
+          <Property Name="sContactIDFK" Type="char" Nullable="false" MaxLength="41" />
+          <Property Name="sMiddleManContactIDFK" Type="char" MaxLength="41" />
+          <Property Name="nGrossAmount" Type="decimal" Precision="17" Scale="3" />
+          <Property Name="nAddlessAmount" Type="decimal" Precision="17" Scale="3" />
+          <Property Name="nNetAmount" Type="decimal" Precision="17" Scale="3" />
+          <Property Name="nExRate" Type="decimal" Precision="17" Scale="3" />
+          <Property Name="sCurrencyIDFk" Type="char" MaxLength="41" />
+          <Property Name="nFCNetAmount" Type="decimal" Precision="17" Scale="3" />
+          <Property Name="bAuthenticate" Type="tinyint" />
+          <Property Name="nAdjustmentAmount" Type="decimal" Precision="17" Scale="3" />
+          <Property Name="sysCreatedBy" Type="char" MaxLength="41" />
+          <Property Name="sysCreatedOn" Type="datetime" />
+          <Property Name="sysUpdatedBy" Type="char" MaxLength="41" />
+          <Property Name="sysUpdatedOn" Type="datetime" />
+          <Property Name="sSuffixFromList" Type="nvarchar" MaxLength="20" />
+          <Property Name="sJobNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="nPrintFL" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="nAgencyCommission" Type="int" />
+          <Property Name="sClientBusiProfile" Type="nvarchar" MaxLength="500" />
+          <Property Name="sBudgetTypes" Type="char" MaxLength="41" />
+          <Property Name="sAnyotherDetails" Type="nvarchar" MaxLength="500" />
+          <Property Name="sAdditionalInfo" Type="nvarchar" MaxLength="500" />
+          <Property Name="nBudgetValue" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="nMountAgencyComm" Type="int" />
+          <Property Name="nPrintBL" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="sCPersonIDFK" Type="char" MaxLength="41" />
+          <Property Name="sApprovedPlan" Type="char" MaxLength="41" />
+          <Property Name="sApprovalNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="dDeadlineDate" Type="datetime" />
+          <Property Name="nMounting" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="nProdAgencyCommission" Type="int" />
+          <Property Name="sBrand1" Type="nvarchar" MaxLength="50" />
+          <Property Name="dTentativeStartDate" Type="datetime" />
+          <Property Name="nNoOfYears" Type="int" />
+          <Property Name="nOtherSTAgencyComm" Type="int" />
+          <Property Name="sMarketingObjective" Type="nvarchar" MaxLength="500" />
+          <Property Name="nPainting" Type="decimal" Scale="2" />
+          <Property Name="dRequestSentTOHo" Type="datetime" />
+          <Property Name="sCompetitionBrand1" Type="nvarchar" MaxLength="50" />
+          <Property Name="dApproval" Type="datetime" />
+          <Property Name="sCSUserIDFK" Type="char" MaxLength="41" />
+          <Property Name="nIllumination" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="sBriefPreparedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="sBriefNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="sBrand2" Type="nvarchar" MaxLength="50" />
+          <Property Name="nNoOfMonths" Type="int" />
+          <Property Name="nNoOfDays" Type="int" />
+          <Property Name="nBriefStatus" Type="int" />
+          <Property Name="nOSDays" Type="int" />
+          <Property Name="sCompetitionBrand2" Type="nvarchar" MaxLength="50" />
+          <Property Name="sPlannerUserIDFK" Type="char" MaxLength="41" />
+          <Property Name="dtSave" Type="datetime" />
+          <Property Name="sPlanVersionsCSIDFK" Type="char" MaxLength="41" />
+          <Property Name="sBrand3" Type="nvarchar" MaxLength="50" />
+          <Property Name="sOtherTerms" Type="nvarchar" MaxLength="500" />
+          <Property Name="dTentativeEndDate" Type="datetime" />
+          <Property Name="sPriorityMarkets" Type="nvarchar" MaxLength="500" />
+          <Property Name="sCompetitionBrand3" Type="nvarchar" MaxLength="50" />
+          <Property Name="sTermsOfPayment" Type="varchar" MaxLength="5000" />
+          <Property Name="dtSend" Type="datetime" />
+          <Property Name="sHeadPlannerUserIDFK" Type="char" MaxLength="41" />
+          <Property Name="nInPrintFL" Type="bit" />
+          <Property Name="sAdObjective" Type="nvarchar" MaxLength="500" />
+          <Property Name="sBrand4" Type="nvarchar" MaxLength="50" />
+          <Property Name="sResonForPrioritising" Type="nvarchar" MaxLength="500" />
+          <Property Name="sLayOutAdapLimitations" Type="nvarchar" MaxLength="500" />
+          <Property Name="nInPrintBL" Type="bit" />
+          <Property Name="sCompetitionBrand4" Type="nvarchar" MaxLength="50" />
+          <Property Name="sPrefSizeOrRatios" Type="nvarchar" MaxLength="500" />
+          <Property Name="nInMounting" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="sBrandUSP" Type="nvarchar" MaxLength="50" />
+          <Property Name="nInPainting" Type="bit" />
+          <Property Name="sTargetGroupBrand" Type="varchar" MaxLength="5000" />
+          <Property Name="sTypofVehicles" Type="varchar" MaxLength="5000" />
+          <Property Name="sTGSMedia" Type="varchar" MaxLength="5000" />
+          <Property Name="nInIllumination" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="PreferredSize" Type="nvarchar" MaxLength="500" />
+          <Property Name="sOthers" Type="nvarchar" MaxLength="500" />
+          <Property Name="sFillLater" Type="nvarchar" MaxLength="10" />
+          <Property Name="sCompetitionBrand" Type="nvarchar" MaxLength="50" />
+          <Property Name="sAdMIX" Type="nvarchar" MaxLength="500" />
+          <Property Name="nServicePer" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="sDisplayType" Type="varchar" MaxLength="5000" />
+          <Property Name="sTargetGroupBrand1" Type="nvarchar" MaxLength="500" />
+          <Property Name="sTGSMediaB1" Type="nvarchar" MaxLength="500" />
+          <Property Name="sDisplayTypesSel" Type="varchar" MaxLength="5000" />
+          <Property Name="sTargetGroupBrand2" Type="nvarchar" MaxLength="500" />
+          <Property Name="sTGSMediaB2" Type="nvarchar" MaxLength="500" />
+          <Property Name="sTargetGroupBrand3" Type="nvarchar" MaxLength="500" />
+          <Property Name="sOutdoorObjective" Type="nvarchar" MaxLength="500" />
+          <Property Name="sTGSMediaB3" Type="nvarchar" MaxLength="500" />
+          <Property Name="sTargetGroupBrand4" Type="nvarchar" MaxLength="500" />
+          <Property Name="sTGSMediaB4" Type="nvarchar" MaxLength="500" />
+          <Property Name="sBrand5" Type="nvarchar" MaxLength="50" />
+          <Property Name="sMarket1" Type="nvarchar" MaxLength="500" />
+          <Property Name="sMarket2" Type="nvarchar" MaxLength="500" />
+          <Property Name="sMarket3" Type="nvarchar" MaxLength="500" />
+          <Property Name="sMarket4" Type="nvarchar" MaxLength="500" />
+          <Property Name="InVinyl" Type="bit" />
+          <Property Name="Complete" Type="bit" />
+          <Property Name="PartVinyl" Type="bit" />
+          <Property Name="Ratio11" Type="bit" />
+          <Property Name="Ratio12" Type="bit" />
+          <Property Name="Ratio13" Type="bit" />
+          <Property Name="Ratio14" Type="bit" />
+          <Property Name="Ratio34" Type="bit" />
+          <Property Name="RatioAll" Type="bit" />
+          <Property Name="BillBoard" Type="bit" />
+          <Property Name="Buses" Type="bit" />
+          <Property Name="PoleKiosks" Type="bit" />
+          <Property Name="BusQShelter" Type="bit" />
+          <Property Name="TransitMedia" Type="bit" />
+          <Property Name="PublicUtitities" Type="bit" />
+          <Property Name="bOthers" Type="bit" />
+          <Property Name="IsInActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="Series">
+          <Key>
+            <PropertyRef Name="seriesId" />
+          </Key>
+          <Property Name="seriesId" Type="int" Nullable="false" />
+          <Property Name="tableName" Type="varchar" MaxLength="100" />
+          <Property Name="columnName" Type="varchar" MaxLength="100" />
+          <Property Name="seed" Type="int" />
+        </EntityType>
+        <EntityType Name="SeriesTransaction">
+          <Key>
+            <PropertyRef Name="seriesTransactionId" />
+          </Key>
+          <Property Name="seriesTransactionId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="seriesId" Type="int" />
+          <Property Name="maxNo" Type="int" />
+          <Property Name="criteria1" Type="varchar" MaxLength="100" />
+          <Property Name="criteria2" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="SiteMaster">
+          <Key>
+            <PropertyRef Name="siteId" />
+          </Key>
+          <Property Name="siteId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="siteNo" Type="int" />
+          <Property Name="siteName" Type="varchar" MaxLength="100" />
+          <Property Name="vendor" Type="char" MaxLength="41" />
+          <Property Name="addressline1" Type="varchar" MaxLength="200" />
+          <Property Name="addressline2" Type="varchar" MaxLength="200" />
+          <Property Name="addressline3" Type="varchar" MaxLength="200" />
+          <Property Name="siteSize" Type="varchar" MaxLength="20" />
+          <Property Name="illumination" Type="varchar" MaxLength="20" />
+          <Property Name="H" Type="smallint" />
+          <Property Name="V" Type="smallint" />
+          <Property Name="SizeRatio" Type="varchar" MaxLength="20" />
+          <Property Name="MediaType" Type="varchar" MaxLength="20" />
+          <Property Name="NoOfFaces" Type="smallint" />
+          <Property Name="siteNoChar" Type="varchar" MaxLength="8" />
+        </EntityType>
+        <Association Name="FK__SeriesTra__serie__0D8054E0">
+          <End Role="Series" Type="MyNotesReadModelModel.Store.Series" Multiplicity="0..1" />
+          <End Role="SeriesTransaction" Type="MyNotesReadModelModel.Store.SeriesTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Series">
+              <PropertyRef Name="seriesId" />
+            </Principal>
+            <Dependent Role="SeriesTransaction">
+              <PropertyRef Name="seriesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_AllocatedRegionAndCities_bmLocationHierarchy_bmLocation">
+          <End Role="bmLocationHierarchy_bmLocation" Type="MyNotesReadModelModel.Store.bmLocationHierarchy_bmLocation" Multiplicity="0..1" />
+          <End Role="AllocatedRegionAndCities" Type="MyNotesReadModelModel.Store.AllocatedRegionAndCities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bmLocationHierarchy_bmLocation">
+              <PropertyRef Name="sLocationID" />
+            </Principal>
+            <Dependent Role="AllocatedRegionAndCities">
+              <PropertyRef Name="LocationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_AllocatedRegionAndCities_bmuser">
+          <End Role="bmUser" Type="MyNotesReadModelModel.Store.bmUser" Multiplicity="0..1" />
+          <End Role="AllocatedRegionAndCities" Type="MyNotesReadModelModel.Store.AllocatedRegionAndCities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bmUser">
+              <PropertyRef Name="sUserID" />
+            </Principal>
+            <Dependent Role="AllocatedRegionAndCities">
+              <PropertyRef Name="PlannerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AllocatedRegionAndCities_BriefAllocation">
+          <End Role="BriefAllocation" Type="MyNotesReadModelModel.Store.BriefAllocation" Multiplicity="0..1" />
+          <End Role="AllocatedRegionAndCities" Type="MyNotesReadModelModel.Store.AllocatedRegionAndCities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BriefAllocation">
+              <PropertyRef Name="BriefAllocationId" />
+            </Principal>
+            <Dependent Role="AllocatedRegionAndCities">
+              <PropertyRef Name="BriefAllocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_bmLocationHierarchy_bmLocation_bmLocationHierarchy_bmLocation">
+          <End Role="bmLocationHierarchy_bmLocation" Type="MyNotesReadModelModel.Store.bmLocationHierarchy_bmLocation" Multiplicity="0..1" />
+          <End Role="bmLocationHierarchy_bmLocation1" Type="MyNotesReadModelModel.Store.bmLocationHierarchy_bmLocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bmLocationHierarchy_bmLocation">
+              <PropertyRef Name="sLocationID" />
+            </Principal>
+            <Dependent Role="bmLocationHierarchy_bmLocation1">
+              <PropertyRef Name="sLocationIDFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BriefAllocation_bmuser">
+          <End Role="bmUser" Type="MyNotesReadModelModel.Store.bmUser" Multiplicity="0..1" />
+          <End Role="BriefAllocation" Type="MyNotesReadModelModel.Store.BriefAllocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bmUser">
+              <PropertyRef Name="sUserID" />
+            </Principal>
+            <Dependent Role="BriefAllocation">
+              <PropertyRef Name="HeadPlannerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_plan_briefmaster_briefid">
+          <End Role="ptmPlanVersionsCS" Type="MyNotesReadModelModel.Store.ptmPlanVersionsCS" Multiplicity="0..1" />
+          <End Role="PlanDetails" Type="MyNotesReadModelModel.Store.PlanDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ptmPlanVersionsCS">
+              <PropertyRef Name="sPlanVersionsCSID" />
+            </Principal>
+            <Dependent Role="PlanDetails">
+              <PropertyRef Name="sBriefId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_PlanAlbum_planDetailsId">
+          <End Role="PlanDetails" Type="MyNotesReadModelModel.Store.PlanDetails" Multiplicity="0..1" />
+          <End Role="PlanAlbum" Type="MyNotesReadModelModel.Store.PlanAlbum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlanDetails">
+              <PropertyRef Name="PlanDetailsId" />
+            </Principal>
+            <Dependent Role="PlanAlbum">
+              <PropertyRef Name="planDetailsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_plancities_bmlocationhiearchy">
+          <End Role="bmLocationHierarchy_bmLocation" Type="MyNotesReadModelModel.Store.bmLocationHierarchy_bmLocation" Multiplicity="0..1" />
+          <End Role="PlanCities" Type="MyNotesReadModelModel.Store.PlanCities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bmLocationHierarchy_bmLocation">
+              <PropertyRef Name="sLocationID" />
+            </Principal>
+            <Dependent Role="PlanCities">
+              <PropertyRef Name="LocationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_plancities_bmuser">
+          <End Role="bmUser" Type="MyNotesReadModelModel.Store.bmUser" Multiplicity="0..1" />
+          <End Role="PlanCities" Type="MyNotesReadModelModel.Store.PlanCities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bmUser">
+              <PropertyRef Name="sUserID" />
+            </Principal>
+            <Dependent Role="PlanCities">
+              <PropertyRef Name="PlannerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PlanCities_Locations">
+          <End Role="bmLocationHierarchy_bmLocation" Type="MyNotesReadModelModel.Store.bmLocationHierarchy_bmLocation" Multiplicity="0..1" />
+          <End Role="PlanCities" Type="MyNotesReadModelModel.Store.PlanCities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bmLocationHierarchy_bmLocation">
+              <PropertyRef Name="sLocationID" />
+            </Principal>
+            <Dependent Role="PlanCities">
+              <PropertyRef Name="LocationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_PlanRegion_plan">
+          <End Role="PlanDetails" Type="MyNotesReadModelModel.Store.PlanDetails" Multiplicity="0..1" />
+          <End Role="PlanRegion" Type="MyNotesReadModelModel.Store.PlanRegion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlanDetails">
+              <PropertyRef Name="PlanDetailsId" />
+            </Principal>
+            <Dependent Role="PlanRegion">
+              <PropertyRef Name="PlanDetailsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_planregion_plancities">
+          <End Role="PlanRegion" Type="MyNotesReadModelModel.Store.PlanRegion" Multiplicity="0..1" />
+          <End Role="PlanCities" Type="MyNotesReadModelModel.Store.PlanCities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlanRegion">
+              <PropertyRef Name="planRegionId" />
+            </Principal>
+            <Dependent Role="PlanCities">
+              <PropertyRef Name="PlanRegionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_plansite_bmcontact_printvendor">
+          <End Role="bmContact" Type="MyNotesReadModelModel.Store.bmContact" Multiplicity="0..1" />
+          <End Role="PlanSite" Type="MyNotesReadModelModel.Store.PlanSite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bmContact">
+              <PropertyRef Name="sContactId" />
+            </Principal>
+            <Dependent Role="PlanSite">
+              <PropertyRef Name="PrintVendor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Plansite_displayVendor1">
+          <End Role="bmContact" Type="MyNotesReadModelModel.Store.bmContact" Multiplicity="0..1" />
+          <End Role="PlanSite" Type="MyNotesReadModelModel.Store.PlanSite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bmContact">
+              <PropertyRef Name="sContactId" />
+            </Principal>
+            <Dependent Role="PlanSite">
+              <PropertyRef Name="DisplayVendor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Plansite_FabricationVendor">
+          <End Role="bmContact" Type="MyNotesReadModelModel.Store.bmContact" Multiplicity="0..1" />
+          <End Role="PlanSite" Type="MyNotesReadModelModel.Store.PlanSite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bmContact">
+              <PropertyRef Name="sContactId" />
+            </Principal>
+            <Dependent Role="PlanSite">
+              <PropertyRef Name="FabricationVendor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Plansite_MountingVendor">
+          <End Role="bmContact" Type="MyNotesReadModelModel.Store.bmContact" Multiplicity="0..1" />
+          <End Role="PlanSite" Type="MyNotesReadModelModel.Store.PlanSite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bmContact">
+              <PropertyRef Name="sContactId" />
+            </Principal>
+            <Dependent Role="PlanSite">
+              <PropertyRef Name="MountingVendor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_plansite_plancity">
+          <End Role="PlanCities" Type="MyNotesReadModelModel.Store.PlanCities" Multiplicity="0..1" />
+          <End Role="PlanSite" Type="MyNotesReadModelModel.Store.PlanSite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlanCities">
+              <PropertyRef Name="PlanCitiesId" />
+            </Principal>
+            <Dependent Role="PlanSite">
+              <PropertyRef Name="planCityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_plansite_SitePhotos">
+          <End Role="PlanSite" Type="MyNotesReadModelModel.Store.PlanSite" Multiplicity="0..1" />
+          <End Role="PlanAlbumSitePhotos" Type="MyNotesReadModelModel.Store.PlanAlbumSitePhotos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlanSite">
+              <PropertyRef Name="planSiteId" />
+            </Principal>
+            <Dependent Role="PlanAlbumSitePhotos">
+              <PropertyRef Name="PlanSiteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_sitephotos_planalbum">
+          <End Role="PlanAlbum" Type="MyNotesReadModelModel.Store.PlanAlbum" Multiplicity="0..1" />
+          <End Role="PlanAlbumSitePhotos" Type="MyNotesReadModelModel.Store.PlanAlbumSitePhotos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlanAlbum">
+              <PropertyRef Name="planAlbumId" />
+            </Principal>
+            <Dependent Role="PlanAlbumSitePhotos">
+              <PropertyRef Name="planAlbumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_sitephotos_plancities">
+          <End Role="PlanCities" Type="MyNotesReadModelModel.Store.PlanCities" Multiplicity="0..1" />
+          <End Role="PlanAlbumSitePhotos" Type="MyNotesReadModelModel.Store.PlanAlbumSitePhotos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlanCities">
+              <PropertyRef Name="PlanCitiesId" />
+            </Principal>
+            <Dependent Role="PlanAlbumSitePhotos">
+              <PropertyRef Name="PlanCityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MyNotesReadModelModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="MyNotesReadModelEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntitySet Name="AllocatedRegionAndCities" EntityType="MyNotesReadModelModel.AllocatedRegionAndCity" />
+          <EntitySet Name="bmAddresses" EntityType="MyNotesReadModelModel.bmAddress" />
+          <EntitySet Name="bmContacts" EntityType="MyNotesReadModelModel.bmContact" />
+          <EntitySet Name="bmLocationHierarchy_bmLocation" EntityType="MyNotesReadModelModel.bmLocationHierarchy_bmLocation" />
+          <EntitySet Name="bmUsers" EntityType="MyNotesReadModelModel.bmUser" />
+          <EntitySet Name="BriefAllocations" EntityType="MyNotesReadModelModel.BriefAllocation" />
+          <EntitySet Name="PlanCities" EntityType="MyNotesReadModelModel.PlanCity" />
+          <EntitySet Name="PlanDetails" EntityType="MyNotesReadModelModel.PlanDetail" />
+          <EntitySet Name="PlanRegions" EntityType="MyNotesReadModelModel.PlanRegion" />
+          <EntitySet Name="Briefs" EntityType="MyNotesReadModelModel.ptmPlanVersionsC" />
+          <AssociationSet Name="fk_AllocatedRegionAndCities_bmLocationHierarchy_bmLocation" Association="MyNotesReadModelModel.fk_AllocatedRegionAndCities_bmLocationHierarchy_bmLocation">
+            <End Role="bmLocationHierarchy_bmLocation" EntitySet="bmLocationHierarchy_bmLocation" />
+            <End Role="AllocatedRegionAndCity" EntitySet="AllocatedRegionAndCities" />
+          </AssociationSet>
+          <AssociationSet Name="fk_AllocatedRegionAndCities_bmuser" Association="MyNotesReadModelModel.fk_AllocatedRegionAndCities_bmuser">
+            <End Role="bmUser" EntitySet="bmUsers" />
+            <End Role="AllocatedRegionAndCity" EntitySet="AllocatedRegionAndCities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AllocatedRegionAndCities_BriefAllocation" Association="MyNotesReadModelModel.FK_AllocatedRegionAndCities_BriefAllocation">
+            <End Role="BriefAllocation" EntitySet="BriefAllocations" />
+            <End Role="AllocatedRegionAndCity" EntitySet="AllocatedRegionAndCities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_bmLocationHierarchy_bmLocation_bmLocationHierarchy_bmLocation" Association="MyNotesReadModelModel.FK_bmLocationHierarchy_bmLocation_bmLocationHierarchy_bmLocation">
+            <End Role="bmLocationHierarchy_bmLocation" EntitySet="bmLocationHierarchy_bmLocation" />
+            <End Role="bmLocationHierarchy_bmLocation1" EntitySet="bmLocationHierarchy_bmLocation" />
+          </AssociationSet>
+          <AssociationSet Name="fk_plancities_bmlocationhiearchy" Association="MyNotesReadModelModel.fk_plancities_bmlocationhiearchy">
+            <End Role="bmLocationHierarchy_bmLocation" EntitySet="bmLocationHierarchy_bmLocation" />
+            <End Role="PlanCity" EntitySet="PlanCities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BriefAllocation_bmuser" Association="MyNotesReadModelModel.FK_BriefAllocation_bmuser">
+            <End Role="bmUser" EntitySet="bmUsers" />
+            <End Role="BriefAllocation" EntitySet="BriefAllocations" />
+          </AssociationSet>
+          <AssociationSet Name="fk_plancities_bmuser" Association="MyNotesReadModelModel.fk_plancities_bmuser">
+            <End Role="bmUser" EntitySet="bmUsers" />
+            <End Role="PlanCity" EntitySet="PlanCities" />
+          </AssociationSet>
+          <AssociationSet Name="fk_plan_briefmaster_briefid" Association="MyNotesReadModelModel.fk_plan_briefmaster_briefid">
+            <End Role="ptmPlanVersionsC" EntitySet="Briefs" />
+            <End Role="PlanDetail" EntitySet="PlanDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_PlanRegion_plan" Association="MyNotesReadModelModel.fk_PlanRegion_plan">
+            <End Role="PlanDetail" EntitySet="PlanDetails" />
+            <End Role="PlanRegion" EntitySet="PlanRegions" />
+          </AssociationSet>
+          <EntitySet Name="NoteItems" EntityType="MyNotesReadModelModel.NoteItem" />
+          <EntitySet Name="PlanSites" EntityType="MyNotesReadModelModel.PlanSite" />
+          <EntitySet Name="SiteMasters" EntityType="MyNotesReadModelModel.SiteMaster" />
+          <AssociationSet Name="fk_plansite_plancity" Association="MyNotesReadModelModel.fk_plansite_plancity">
+            <End Role="PlanCity" EntitySet="PlanCities" />
+            <End Role="PlanSite" EntitySet="PlanSites" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Plansite_displayVendor1" Association="MyNotesReadModelModel.FK_Plansite_displayVendor1">
+            <End Role="bmContact" EntitySet="bmContacts" />
+            <End Role="PlanSite" EntitySet="PlanSites" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Plansite_FabricationVendor" Association="MyNotesReadModelModel.FK_Plansite_FabricationVendor">
+            <End Role="bmContact" EntitySet="bmContacts" />
+            <End Role="PlanSite" EntitySet="PlanSites" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Plansite_MountingVendor" Association="MyNotesReadModelModel.FK_Plansite_MountingVendor">
+            <End Role="bmContact" EntitySet="bmContacts" />
+            <End Role="PlanSite" EntitySet="PlanSites" />
+          </AssociationSet>
+          <AssociationSet Name="fk_plansite_bmcontact_printvendor" Association="MyNotesReadModelModel.fk_plansite_bmcontact_printvendor">
+            <End Role="bmContact" EntitySet="bmContacts" />
+            <End Role="PlanSite" EntitySet="PlanSites" />
+          </AssociationSet>
+          <AssociationSet Name="fk_planregion_plancities" Association="MyNotesReadModelModel.fk_planregion_plancities">
+            <End Role="PlanRegion" EntitySet="PlanRegions" />
+            <End Role="PlanCity" EntitySet="PlanCities" />
+          </AssociationSet>
+          <EntitySet Name="Series" EntityType="MyNotesReadModelModel.Series" />
+          <EntitySet Name="SeriesTransactions" EntityType="MyNotesReadModelModel.SeriesTransaction" />
+          <AssociationSet Name="FK__SeriesTra__serie__0D8054E0" Association="MyNotesReadModelModel.FK__SeriesTra__serie__0D8054E0">
+            <End Role="Series" EntitySet="Series" />
+            <End Role="SeriesTransaction" EntitySet="SeriesTransactions" />
+          </AssociationSet>
+          <EntitySet Name="PlanAlbums" EntityType="MyNotesReadModelModel.PlanAlbum" />
+          <EntitySet Name="PlanAlbumSitePhotos" EntityType="MyNotesReadModelModel.PlanAlbumSitePhoto" />
+          <AssociationSet Name="fk_PlanAlbum_planDetailsId" Association="MyNotesReadModelModel.fk_PlanAlbum_planDetailsId">
+            <End Role="PlanDetail" EntitySet="PlanDetails" />
+            <End Role="PlanAlbum" EntitySet="PlanAlbums" />
+          </AssociationSet>
+          <AssociationSet Name="fk_sitephotos_planalbum" Association="MyNotesReadModelModel.fk_sitephotos_planalbum">
+            <End Role="PlanAlbum" EntitySet="PlanAlbums" />
+            <End Role="PlanAlbumSitePhoto" EntitySet="PlanAlbumSitePhotos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_plansite_SitePhotos" Association="MyNotesReadModelModel.fk_plansite_SitePhotos">
+            <End Role="PlanSite" EntitySet="PlanSites" />
+            <End Role="PlanAlbumSitePhoto" EntitySet="PlanAlbumSitePhotos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_sitephotos_plancities" Association="MyNotesReadModelModel.fk_sitephotos_plancities">
+            <End Role="PlanCity" EntitySet="PlanCities" />
+            <End Role="PlanAlbumSitePhoto" EntitySet="PlanAlbumSitePhotos" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AllocatedRegionAndCity">
+          <Key>
+            <PropertyRef Name="AllocatedRegionAndCitiesId" />
+          </Key>
+          <Property Type="Guid" Name="AllocatedRegionAndCitiesId" Nullable="false" />
+          <Property Type="Guid" Name="BriefAllocationId" />
+          <Property Type="String" Name="Region" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LocationID" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="PlannerID" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="Decimal" Name="budget" Precision="19" Scale="4" />
+          <NavigationProperty Name="bmLocationHierarchy_bmLocation" Relationship="MyNotesReadModelModel.fk_AllocatedRegionAndCities_bmLocationHierarchy_bmLocation" FromRole="AllocatedRegionAndCity" ToRole="bmLocationHierarchy_bmLocation" />
+          <NavigationProperty Name="bmUser" Relationship="MyNotesReadModelModel.fk_AllocatedRegionAndCities_bmuser" FromRole="AllocatedRegionAndCity" ToRole="bmUser" />
+          <NavigationProperty Name="BriefAllocation" Relationship="MyNotesReadModelModel.FK_AllocatedRegionAndCities_BriefAllocation" FromRole="AllocatedRegionAndCity" ToRole="BriefAllocation" />
+        </EntityType>
+        <EntityType Name="bmAddress">
+          <Key>
+            <PropertyRef Name="sAddressID" />
+          </Key>
+          <Property Type="String" Name="sAddressID" Nullable="false" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="sTable" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="sAddressOfIDFK" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="sAddressNatureIDFK" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="sBuilding" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sStreet" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sLandMark" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sSuburb" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sCountry" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sState" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sCity" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sPinCode" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sTitle" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sContactPerson" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="bmContact">
+          <Key>
+            <PropertyRef Name="sContactId" />
+          </Key>
+          <Property Type="String" Name="sContactId" Nullable="false" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="sName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sContactNatureIdFK" MaxLength="41" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="PlanSites" Relationship="MyNotesReadModelModel.FK_Plansite_displayVendor1" FromRole="bmContact" ToRole="PlanSite" />
+          <NavigationProperty Name="PlanSites1" Relationship="MyNotesReadModelModel.FK_Plansite_FabricationVendor" FromRole="bmContact" ToRole="PlanSite" />
+          <NavigationProperty Name="PlanSites2" Relationship="MyNotesReadModelModel.FK_Plansite_MountingVendor" FromRole="bmContact" ToRole="PlanSite" />
+          <NavigationProperty Name="PrintVendorContact" Relationship="MyNotesReadModelModel.fk_plansite_bmcontact_printvendor" FromRole="bmContact" ToRole="PlanSite" />
+          <Property Type="String" Name="EmailId" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="bmLocationHierarchy_bmLocation">
+          <Key>
+            <PropertyRef Name="sLocationID" />
+          </Key>
+          <Property Type="String" Name="sLocationID" Nullable="false" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="sLocationHierarchyIDFK" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="sLocationName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sLocationIDFK" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="sDescription" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AllocatedRegionAndCities" Relationship="MyNotesReadModelModel.fk_AllocatedRegionAndCities_bmLocationHierarchy_bmLocation" FromRole="bmLocationHierarchy_bmLocation" ToRole="AllocatedRegionAndCity" />
+          <NavigationProperty Name="bmLocationHierarchy_bmLocation1" Relationship="MyNotesReadModelModel.FK_bmLocationHierarchy_bmLocation_bmLocationHierarchy_bmLocation" FromRole="bmLocationHierarchy_bmLocation" ToRole="bmLocationHierarchy_bmLocation1" />
+          <NavigationProperty Name="bmLocationHierarchy_bmLocation2" Relationship="MyNotesReadModelModel.FK_bmLocationHierarchy_bmLocation_bmLocationHierarchy_bmLocation" FromRole="bmLocationHierarchy_bmLocation1" ToRole="bmLocationHierarchy_bmLocation" />
+          <NavigationProperty Name="PlanCities" Relationship="MyNotesReadModelModel.fk_plancities_bmlocationhiearchy" FromRole="bmLocationHierarchy_bmLocation" ToRole="PlanCity" />
+          <Property Type="String" Name="Region" MaxLength="5" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="bmUser">
+          <Key>
+            <PropertyRef Name="sUserID" />
+          </Key>
+          <Property Type="String" Name="sUserID" Nullable="false" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="sUserName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sLoginName" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sPassword" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="bStatus" />
+          <Property Type="Boolean" Name="bSystem" />
+          <NavigationProperty Name="AllocatedRegionAndCities" Relationship="MyNotesReadModelModel.fk_AllocatedRegionAndCities_bmuser" FromRole="bmUser" ToRole="AllocatedRegionAndCity" />
+          <NavigationProperty Name="BriefAllocations" Relationship="MyNotesReadModelModel.FK_BriefAllocation_bmuser" FromRole="bmUser" ToRole="BriefAllocation" />
+          <NavigationProperty Name="PlanCities" Relationship="MyNotesReadModelModel.fk_plancities_bmuser" FromRole="bmUser" ToRole="PlanCity" />
+        </EntityType>
+        <EntityType Name="BriefAllocation">
+          <Key>
+            <PropertyRef Name="BriefAllocationId" />
+          </Key>
+          <Property Type="Guid" Name="BriefAllocationId" Nullable="false" />
+          <Property Type="String" Name="sBriefId" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="BriefNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreatedOn" />
+          <Property Type="String" Name="HeadPlannerID" MaxLength="41" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="AllocatedRegionAndCities" Relationship="MyNotesReadModelModel.FK_AllocatedRegionAndCities_BriefAllocation" FromRole="BriefAllocation" ToRole="AllocatedRegionAndCity" />
+          <NavigationProperty Name="bmUser" Relationship="MyNotesReadModelModel.FK_BriefAllocation_bmuser" FromRole="BriefAllocation" ToRole="bmUser" />
+        </EntityType>
+        <EntityType Name="PlanCity">
+          <Key>
+            <PropertyRef Name="PlanCitiesId" />
+          </Key>
+          <Property Type="Guid" Name="PlanCitiesId" Nullable="false" />
+          <Property Type="String" Name="PlanRegion" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LocationID" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="PlannerID" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="Decimal" Name="Budget" Precision="19" Scale="4" />
+          <NavigationProperty Name="bmLocationHierarchy_bmLocation" Relationship="MyNotesReadModelModel.fk_plancities_bmlocationhiearchy" FromRole="PlanCity" ToRole="bmLocationHierarchy_bmLocation" />
+          <NavigationProperty Name="bmUser" Relationship="MyNotesReadModelModel.fk_plancities_bmuser" FromRole="PlanCity" ToRole="bmUser" />
+          <Property Type="Guid" Name="PlanDetailsId" />
+          <NavigationProperty Name="PlanSites" Relationship="MyNotesReadModelModel.fk_plansite_plancity" FromRole="PlanCity" ToRole="PlanSite" />
+          <Property Type="Guid" Name="PlanRegionId" />
+          <NavigationProperty Name="PlanRegionsLink" Relationship="MyNotesReadModelModel.fk_planregion_plancities" FromRole="PlanCity" ToRole="PlanRegion" />
+          <Property Type="Guid" Name="PhotoAgId" />
+          <NavigationProperty Name="PlanAlbumSitePhotos" Relationship="MyNotesReadModelModel.fk_sitephotos_plancities" FromRole="PlanCity" ToRole="PlanAlbumSitePhoto" />
+        </EntityType>
+        <EntityType Name="PlanDetail">
+          <Key>
+            <PropertyRef Name="PlanDetailsId" />
+          </Key>
+          <Property Type="Guid" Name="PlanDetailsId" Nullable="false" />
+          <Property Type="String" Name="sBriefId" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="BriefNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreatedOn" />
+          <Property Type="String" Name="HeadPlannerID" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="PlanNo" Nullable="false" />
+          <Property Type="DateTime" Name="StartDate" />
+          <Property Type="DateTime" Name="EndDate" />
+          <Property Type="Decimal" Name="budget" Precision="19" Scale="4" />
+          <NavigationProperty Name="ptmPlanVersionsC" Relationship="MyNotesReadModelModel.fk_plan_briefmaster_briefid" FromRole="PlanDetail" ToRole="ptmPlanVersionsC" />
+          <NavigationProperty Name="PlanRegions" Relationship="MyNotesReadModelModel.fk_PlanRegion_plan" FromRole="PlanDetail" ToRole="PlanRegion" />
+          <Property Type="String" Name="ContactId" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="DateTime" Name="UpdatedOn" />
+          <Property Type="Guid" Name="photoAgId" />
+          <NavigationProperty Name="PlanAlbums" Relationship="MyNotesReadModelModel.fk_PlanAlbum_planDetailsId" FromRole="PlanDetail" ToRole="PlanAlbum" />
+          <Property Type="Boolean" Name="IsEmailSent" />
+        </EntityType>
+        <EntityType Name="PlanRegion">
+          <Key>
+            <PropertyRef Name="planRegionId" />
+          </Key>
+          <Property Type="Guid" Name="planRegionId" Nullable="false" />
+          <Property Type="String" Name="Region" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="Guid" Name="PlanDetailsId" />
+          <NavigationProperty Name="PlanDetail" Relationship="MyNotesReadModelModel.fk_PlanRegion_plan" FromRole="PlanRegion" ToRole="PlanDetail" />
+          <Property Type="Decimal" Name="Budget" Precision="19" Scale="4" />
+          <Property Type="String" Name="PlannerId" />
+          <NavigationProperty Name="PlanCities" Relationship="MyNotesReadModelModel.fk_planregion_plancities" FromRole="PlanRegion" ToRole="PlanCity" />
+        </EntityType>
+        <EntityType Name="ptmPlanVersionsC">
+          <Key>
+            <PropertyRef Name="sPlanVersionsCSID" />
+          </Key>
+          <Property Type="String" Name="sPlanVersionsCSID" Nullable="false" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="sCompanyIdfk" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="DateTime" Name="dtVoucher" Nullable="false" />
+          <Property Type="Int32" Name="nVoucher" />
+          <Property Type="String" Name="sPrefixFromList" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sPrefixFromText" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sContactIDFK" Nullable="false" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="sMiddleManContactIDFK" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="Decimal" Name="nGrossAmount" Precision="17" Scale="3" />
+          <Property Type="Decimal" Name="nAddlessAmount" Precision="17" Scale="3" />
+          <Property Type="Decimal" Name="nNetAmount" Precision="17" Scale="3" />
+          <Property Type="Decimal" Name="nExRate" Precision="17" Scale="3" />
+          <Property Type="String" Name="sCurrencyIDFk" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="Decimal" Name="nFCNetAmount" Precision="17" Scale="3" />
+          <Property Type="Byte" Name="bAuthenticate" />
+          <Property Type="Decimal" Name="nAdjustmentAmount" Precision="17" Scale="3" />
+          <Property Type="String" Name="sysCreatedBy" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="DateTime" Name="sysCreatedOn" />
+          <Property Type="String" Name="sysUpdatedBy" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="DateTime" Name="sysUpdatedOn" />
+          <Property Type="String" Name="sSuffixFromList" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sJobNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="nPrintFL" Precision="12" Scale="2" />
+          <Property Type="Int32" Name="nAgencyCommission" />
+          <Property Type="String" Name="sClientBusiProfile" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sBudgetTypes" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="sAnyotherDetails" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sAdditionalInfo" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="nBudgetValue" Precision="12" Scale="2" />
+          <Property Type="Int32" Name="nMountAgencyComm" />
+          <Property Type="Decimal" Name="nPrintBL" Precision="12" Scale="2" />
+          <Property Type="String" Name="sCPersonIDFK" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="sApprovedPlan" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="sApprovalNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="dDeadlineDate" />
+          <Property Type="Decimal" Name="nMounting" Precision="12" Scale="2" />
+          <Property Type="Int32" Name="nProdAgencyCommission" />
+          <Property Type="String" Name="sBrand1" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="dTentativeStartDate" />
+          <Property Type="Int32" Name="nNoOfYears" />
+          <Property Type="Int32" Name="nOtherSTAgencyComm" />
+          <Property Type="String" Name="sMarketingObjective" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="nPainting" Precision="18" Scale="2" />
+          <Property Type="DateTime" Name="dRequestSentTOHo" />
+          <Property Type="String" Name="sCompetitionBrand1" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="dApproval" />
+          <Property Type="String" Name="sCSUserIDFK" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="Decimal" Name="nIllumination" Precision="12" Scale="2" />
+          <Property Type="String" Name="sBriefPreparedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sBriefNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sBrand2" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="nNoOfMonths" />
+          <Property Type="Int32" Name="nNoOfDays" />
+          <Property Type="Int32" Name="nBriefStatus" />
+          <Property Type="Int32" Name="nOSDays" />
+          <Property Type="String" Name="sCompetitionBrand2" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sPlannerUserIDFK" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="DateTime" Name="dtSave" />
+          <Property Type="String" Name="sPlanVersionsCSIDFK" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="sBrand3" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sOtherTerms" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="dTentativeEndDate" />
+          <Property Type="String" Name="sPriorityMarkets" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sCompetitionBrand3" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sTermsOfPayment" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="dtSend" />
+          <Property Type="String" Name="sHeadPlannerUserIDFK" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="Boolean" Name="nInPrintFL" />
+          <Property Type="String" Name="sAdObjective" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sBrand4" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sResonForPrioritising" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sLayOutAdapLimitations" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="nInPrintBL" />
+          <Property Type="String" Name="sCompetitionBrand4" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sPrefSizeOrRatios" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="nInMounting" Precision="12" Scale="2" />
+          <Property Type="String" Name="sBrandUSP" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="nInPainting" />
+          <Property Type="String" Name="sTargetGroupBrand" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="sTypofVehicles" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="sTGSMedia" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="nInIllumination" Precision="12" Scale="2" />
+          <Property Type="String" Name="PreferredSize" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sOthers" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sFillLater" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sCompetitionBrand" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sAdMIX" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="nServicePer" Precision="12" Scale="2" />
+          <Property Type="String" Name="sDisplayType" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="sTargetGroupBrand1" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sTGSMediaB1" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sDisplayTypesSel" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="sTargetGroupBrand2" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sTGSMediaB2" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sTargetGroupBrand3" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sOutdoorObjective" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sTGSMediaB3" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sTargetGroupBrand4" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sTGSMediaB4" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sBrand5" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sMarket1" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sMarket2" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sMarket3" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sMarket4" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="InVinyl" />
+          <Property Type="Boolean" Name="Complete" />
+          <Property Type="Boolean" Name="PartVinyl" />
+          <Property Type="Boolean" Name="Ratio11" />
+          <Property Type="Boolean" Name="Ratio12" />
+          <Property Type="Boolean" Name="Ratio13" />
+          <Property Type="Boolean" Name="Ratio14" />
+          <Property Type="Boolean" Name="Ratio34" />
+          <Property Type="Boolean" Name="RatioAll" />
+          <Property Type="Boolean" Name="BillBoard" />
+          <Property Type="Boolean" Name="Buses" />
+          <Property Type="Boolean" Name="PoleKiosks" />
+          <Property Type="Boolean" Name="BusQShelter" />
+          <Property Type="Boolean" Name="TransitMedia" />
+          <Property Type="Boolean" Name="PublicUtitities" />
+          <Property Type="Boolean" Name="bOthers" />
+          <Property Type="Boolean" Name="IsInActive" />
+          <NavigationProperty Name="PlanDetails" Relationship="MyNotesReadModelModel.fk_plan_briefmaster_briefid" FromRole="ptmPlanVersionsC" ToRole="PlanDetail" />
+        </EntityType>
+        <Association Name="fk_AllocatedRegionAndCities_bmLocationHierarchy_bmLocation">
+          <End Type="MyNotesReadModelModel.bmLocationHierarchy_bmLocation" Role="bmLocationHierarchy_bmLocation" Multiplicity="0..1" />
+          <End Type="MyNotesReadModelModel.AllocatedRegionAndCity" Role="AllocatedRegionAndCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bmLocationHierarchy_bmLocation">
+              <PropertyRef Name="sLocationID" />
+            </Principal>
+            <Dependent Role="AllocatedRegionAndCity">
+              <PropertyRef Name="LocationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_AllocatedRegionAndCities_bmuser">
+          <End Type="MyNotesReadModelModel.bmUser" Role="bmUser" Multiplicity="0..1" />
+          <End Type="MyNotesReadModelModel.AllocatedRegionAndCity" Role="AllocatedRegionAndCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bmUser">
+              <PropertyRef Name="sUserID" />
+            </Principal>
+            <Dependent Role="AllocatedRegionAndCity">
+              <PropertyRef Name="PlannerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AllocatedRegionAndCities_BriefAllocation">
+          <End Type="MyNotesReadModelModel.BriefAllocation" Role="BriefAllocation" Multiplicity="0..1" />
+          <End Type="MyNotesReadModelModel.AllocatedRegionAndCity" Role="AllocatedRegionAndCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BriefAllocation">
+              <PropertyRef Name="BriefAllocationId" />
+            </Principal>
+            <Dependent Role="AllocatedRegionAndCity">
+              <PropertyRef Name="BriefAllocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_bmLocationHierarchy_bmLocation_bmLocationHierarchy_bmLocation">
+          <End Type="MyNotesReadModelModel.bmLocationHierarchy_bmLocation" Role="bmLocationHierarchy_bmLocation" Multiplicity="0..1" />
+          <End Type="MyNotesReadModelModel.bmLocationHierarchy_bmLocation" Role="bmLocationHierarchy_bmLocation1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bmLocationHierarchy_bmLocation">
+              <PropertyRef Name="sLocationID" />
+            </Principal>
+            <Dependent Role="bmLocationHierarchy_bmLocation1">
+              <PropertyRef Name="sLocationIDFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_plancities_bmlocationhiearchy">
+          <End Type="MyNotesReadModelModel.bmLocationHierarchy_bmLocation" Role="bmLocationHierarchy_bmLocation" Multiplicity="0..1" />
+          <End Type="MyNotesReadModelModel.PlanCity" Role="PlanCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bmLocationHierarchy_bmLocation">
+              <PropertyRef Name="sLocationID" />
+            </Principal>
+            <Dependent Role="PlanCity">
+              <PropertyRef Name="LocationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BriefAllocation_bmuser">
+          <End Type="MyNotesReadModelModel.bmUser" Role="bmUser" Multiplicity="0..1" />
+          <End Type="MyNotesReadModelModel.BriefAllocation" Role="BriefAllocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bmUser">
+              <PropertyRef Name="sUserID" />
+            </Principal>
+            <Dependent Role="BriefAllocation">
+              <PropertyRef Name="HeadPlannerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_plancities_bmuser">
+          <End Type="MyNotesReadModelModel.bmUser" Role="bmUser" Multiplicity="0..1" />
+          <End Type="MyNotesReadModelModel.PlanCity" Role="PlanCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bmUser">
+              <PropertyRef Name="sUserID" />
+            </Principal>
+            <Dependent Role="PlanCity">
+              <PropertyRef Name="PlannerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_plan_briefmaster_briefid">
+          <End Type="MyNotesReadModelModel.ptmPlanVersionsC" Role="ptmPlanVersionsC" Multiplicity="0..1" />
+          <End Type="MyNotesReadModelModel.PlanDetail" Role="PlanDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ptmPlanVersionsC">
+              <PropertyRef Name="sPlanVersionsCSID" />
+            </Principal>
+            <Dependent Role="PlanDetail">
+              <PropertyRef Name="sBriefId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_PlanRegion_plan">
+          <End Type="MyNotesReadModelModel.PlanDetail" Role="PlanDetail" Multiplicity="0..1" />
+          <End Type="MyNotesReadModelModel.PlanRegion" Role="PlanRegion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlanDetail">
+              <PropertyRef Name="PlanDetailsId" />
+            </Principal>
+            <Dependent Role="PlanRegion">
+              <PropertyRef Name="PlanDetailsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="NoteItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Text" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreationDate" />
+        </EntityType>
+        <EntityType Name="PlanSite">
+          <Key>
+            <PropertyRef Name="planSiteId" />
+          </Key>
+          <Property Type="Guid" Name="planSiteId" Nullable="false" />
+          <Property Type="Int32" Name="siteNo" />
+          <Property Type="String" Name="siteName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="addressline1" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="addressline2" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="addressline3" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="siteSize" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="illumination" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="H" />
+          <Property Type="Int16" Name="V" />
+          <Property Type="String" Name="SizeRatio" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MediaType" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="NoOfFaces" />
+          <Property Type="DateTime" Name="StartDate" />
+          <Property Type="DateTime" Name="EndDate" />
+          <Property Type="Int16" Name="Days" />
+          <Property Type="Int16" Name="Qty" />
+          <Property Type="String" Name="DisplayVendor" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="Decimal" Name="DisplayRate" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="DisplayCost" Precision="19" Scale="4" />
+          <Property Type="DateTime" Name="DisplayFromDate" />
+          <Property Type="DateTime" Name="DisplayToDate" />
+          <Property Type="DateTime" Name="ClientFromDate" />
+          <Property Type="DateTime" Name="ClientToDate" />
+          <Property Type="Decimal" Name="DisplayClientRate" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="DisplayClientCost" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="PrintRate" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="PrintCost" Precision="19" Scale="4" />
+          <Property Type="Int16" Name="PrintSqFt" />
+          <Property Type="Decimal" Name="PrintClientRate" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="PrintClientCost" Precision="19" Scale="4" />
+          <Property Type="String" Name="FabricationVendor" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="Decimal" Name="FabricationRate" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="FabricationCost" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="FabricationClientRate" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="FabricationClientCost" Precision="19" Scale="4" />
+          <Property Type="String" Name="MountingVendor" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="Decimal" Name="MountingRate" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="MountingCost" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="MountingClientRate" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="MountingClientCost" Precision="19" Scale="4" />
+          <Property Type="Int32" Name="CreativeAppliedId" />
+          <Property Type="String" Name="CreativeDescription" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PlanCity" Relationship="MyNotesReadModelModel.fk_plansite_plancity" FromRole="PlanSite" ToRole="PlanCity" />
+          <Property Type="Boolean" Name="IsInActive" Nullable="false" />
+          <Property Type="Decimal" Name="SiteSizeInSqFt" Precision="18" Scale="0" />
+          <NavigationProperty Name="DisplayVendorContact" Relationship="MyNotesReadModelModel.FK_Plansite_displayVendor1" FromRole="PlanSite" ToRole="bmContact" />
+          <NavigationProperty Name="FabricationVendorContact" Relationship="MyNotesReadModelModel.FK_Plansite_FabricationVendor" FromRole="PlanSite" ToRole="bmContact" />
+          <NavigationProperty Name="MountingVendorContact" Relationship="MyNotesReadModelModel.FK_Plansite_MountingVendor" FromRole="PlanSite" ToRole="bmContact" />
+          <Property Type="String" Name="PrintVendor" MaxLength="41" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="PrintVendorContact" Relationship="MyNotesReadModelModel.fk_plansite_bmcontact_printvendor" FromRole="PlanSite" ToRole="bmContact" />
+          <Property Type="String" Name="DisplayStatus" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MountingStatus" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PrintingStatus" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FabricationStatus" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="chargingBasis" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PlanAlbumSitePhotos" Relationship="MyNotesReadModelModel.fk_plansite_SitePhotos" FromRole="PlanSite" ToRole="PlanAlbumSitePhoto" />
+        </EntityType>
+        <EntityType Name="SiteMaster">
+          <Key>
+            <PropertyRef Name="siteId" />
+          </Key>
+          <Property Type="Guid" Name="siteId" Nullable="false" />
+          <Property Type="Int32" Name="siteNo" />
+          <Property Type="String" Name="siteName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="vendor" MaxLength="41" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="addressline1" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="addressline2" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="addressline3" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="siteSize" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="illumination" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="H" />
+          <Property Type="Int16" Name="V" />
+          <Property Type="String" Name="SizeRatio" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MediaType" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="NoOfFaces" />
+          <Property Type="String" Name="siteNoChar" MaxLength="8" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="fk_plansite_plancity">
+          <End Type="MyNotesReadModelModel.PlanCity" Role="PlanCity" Multiplicity="0..1" />
+          <End Type="MyNotesReadModelModel.PlanSite" Role="PlanSite" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Plansite_displayVendor1">
+          <End Type="MyNotesReadModelModel.bmContact" Role="bmContact" Multiplicity="0..1" />
+          <End Type="MyNotesReadModelModel.PlanSite" Role="PlanSite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bmContact">
+              <PropertyRef Name="sContactId" />
+            </Principal>
+            <Dependent Role="PlanSite">
+              <PropertyRef Name="DisplayVendor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Plansite_FabricationVendor">
+          <End Type="MyNotesReadModelModel.bmContact" Role="bmContact" Multiplicity="0..1" />
+          <End Type="MyNotesReadModelModel.PlanSite" Role="PlanSite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bmContact">
+              <PropertyRef Name="sContactId" />
+            </Principal>
+            <Dependent Role="PlanSite">
+              <PropertyRef Name="FabricationVendor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Plansite_MountingVendor">
+          <End Type="MyNotesReadModelModel.bmContact" Role="bmContact" Multiplicity="0..1" />
+          <End Type="MyNotesReadModelModel.PlanSite" Role="PlanSite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bmContact">
+              <PropertyRef Name="sContactId" />
+            </Principal>
+            <Dependent Role="PlanSite">
+              <PropertyRef Name="MountingVendor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_plansite_bmcontact_printvendor">
+          <End Type="MyNotesReadModelModel.bmContact" Role="bmContact" Multiplicity="0..1" />
+          <End Type="MyNotesReadModelModel.PlanSite" Role="PlanSite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bmContact">
+              <PropertyRef Name="sContactId" />
+            </Principal>
+            <Dependent Role="PlanSite">
+              <PropertyRef Name="PrintVendor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_planregion_plancities">
+          <End Type="MyNotesReadModelModel.PlanRegion" Role="PlanRegion" Multiplicity="0..1" />
+          <End Type="MyNotesReadModelModel.PlanCity" Role="PlanCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlanRegion">
+              <PropertyRef Name="planRegionId" />
+            </Principal>
+            <Dependent Role="PlanCity">
+              <PropertyRef Name="PlanRegionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Series">
+          <Key>
+            <PropertyRef Name="seriesId" />
+          </Key>
+          <Property Type="Int32" Name="seriesId" Nullable="false" />
+          <Property Type="String" Name="tableName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="columnName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="seed" />
+          <NavigationProperty Name="SeriesTransactions" Relationship="MyNotesReadModelModel.FK__SeriesTra__serie__0D8054E0" FromRole="Series" ToRole="SeriesTransaction" />
+        </EntityType>
+        <EntityType Name="SeriesTransaction">
+          <Key>
+            <PropertyRef Name="seriesTransactionId" />
+          </Key>
+          <Property Type="Guid" Name="seriesTransactionId" Nullable="false" />
+          <Property Type="Int32" Name="seriesId" />
+          <Property Type="Int32" Name="maxNo" />
+          <Property Type="String" Name="criteria1" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="criteria2" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Series" Relationship="MyNotesReadModelModel.FK__SeriesTra__serie__0D8054E0" FromRole="SeriesTransaction" ToRole="Series" />
+        </EntityType>
+        <Association Name="FK__SeriesTra__serie__0D8054E0">
+          <End Type="MyNotesReadModelModel.Series" Role="Series" Multiplicity="0..1" />
+          <End Type="MyNotesReadModelModel.SeriesTransaction" Role="SeriesTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Series">
+              <PropertyRef Name="seriesId" />
+            </Principal>
+            <Dependent Role="SeriesTransaction">
+              <PropertyRef Name="seriesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="PlanAlbum">
+          <Key>
+            <PropertyRef Name="planAlbumId" />
+          </Key>
+          <Property Type="Guid" Name="planAlbumId" Nullable="false" />
+          <Property Type="Guid" Name="planDetailsId" />
+          <NavigationProperty Name="PlanDetail" Relationship="MyNotesReadModelModel.fk_PlanAlbum_planDetailsId" FromRole="PlanAlbum" ToRole="PlanDetail" />
+          <NavigationProperty Name="PlanAlbumSitePhotos" Relationship="MyNotesReadModelModel.fk_sitephotos_planalbum" FromRole="PlanAlbum" ToRole="PlanAlbumSitePhoto" />
+          <Property Type="Int32" Name="AlbumNo" />
+        </EntityType>
+        <EntityType Name="PlanAlbumSitePhoto">
+          <Key>
+            <PropertyRef Name="PlanAlbumSitePhotosId" />
+          </Key>
+          <Property Type="Guid" Name="PlanAlbumSitePhotosId" Nullable="false" />
+          <Property Type="Guid" Name="PlanSiteId" />
+          <Property Type="Guid" Name="PlanCityId" />
+          <Property Type="String" Name="PhotoName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Title" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Tags" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="bIsAssigned" />
+          <Property Type="Guid" Name="planAlbumId" />
+          <NavigationProperty Name="PlanAlbum" Relationship="MyNotesReadModelModel.fk_sitephotos_planalbum" FromRole="PlanAlbumSitePhoto" ToRole="PlanAlbum" />
+          <NavigationProperty Name="PlanSite" Relationship="MyNotesReadModelModel.fk_plansite_SitePhotos" FromRole="PlanAlbumSitePhoto" ToRole="PlanSite" />
+          <NavigationProperty Name="PlanCity" Relationship="MyNotesReadModelModel.fk_sitephotos_plancities" FromRole="PlanAlbumSitePhoto" ToRole="PlanCity" />
+        </EntityType>
+        <Association Name="fk_PlanAlbum_planDetailsId">
+          <End Type="MyNotesReadModelModel.PlanDetail" Role="PlanDetail" Multiplicity="0..1" />
+          <End Type="MyNotesReadModelModel.PlanAlbum" Role="PlanAlbum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlanDetail">
+              <PropertyRef Name="PlanDetailsId" />
+            </Principal>
+            <Dependent Role="PlanAlbum">
+              <PropertyRef Name="planDetailsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_sitephotos_planalbum">
+          <End Type="MyNotesReadModelModel.PlanAlbum" Role="PlanAlbum" Multiplicity="0..1" />
+          <End Type="MyNotesReadModelModel.PlanAlbumSitePhoto" Role="PlanAlbumSitePhoto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlanAlbum">
+              <PropertyRef Name="planAlbumId" />
+            </Principal>
+            <Dependent Role="PlanAlbumSitePhoto">
+              <PropertyRef Name="planAlbumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_plansite_SitePhotos">
+          <End Type="MyNotesReadModelModel.PlanSite" Role="PlanSite" Multiplicity="0..1" />
+          <End Type="MyNotesReadModelModel.PlanAlbumSitePhoto" Role="PlanAlbumSitePhoto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlanSite">
+              <PropertyRef Name="planSiteId" />
+            </Principal>
+            <Dependent Role="PlanAlbumSitePhoto">
+              <PropertyRef Name="PlanSiteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_sitephotos_plancities">
+          <End Type="MyNotesReadModelModel.PlanCity" Role="PlanCity" Multiplicity="0..1" />
+          <End Type="MyNotesReadModelModel.PlanAlbumSitePhoto" Role="PlanAlbumSitePhoto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlanCity">
+              <PropertyRef Name="PlanCitiesId" />
+            </Principal>
+            <Dependent Role="PlanAlbumSitePhoto">
+              <PropertyRef Name="PlanCityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MyNotesReadModelModelStoreContainer" CdmEntityContainer="MyNotesReadModelEntities">
+          <EntitySetMapping Name="AllocatedRegionAndCities">
+            <EntityTypeMapping TypeName="MyNotesReadModelModel.AllocatedRegionAndCity">
+              <MappingFragment StoreEntitySet="AllocatedRegionAndCities">
+                <ScalarProperty Name="budget" ColumnName="budget" />
+                <ScalarProperty Name="PlannerID" ColumnName="PlannerID" />
+                <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="BriefAllocationId" ColumnName="BriefAllocationId" />
+                <ScalarProperty Name="AllocatedRegionAndCitiesId" ColumnName="AllocatedRegionAndCitiesId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="bmAddresses">
+            <EntityTypeMapping TypeName="MyNotesReadModelModel.bmAddress">
+              <MappingFragment StoreEntitySet="bmAddress">
+                <ScalarProperty Name="sContactPerson" ColumnName="sContactPerson" />
+                <ScalarProperty Name="sTitle" ColumnName="sTitle" />
+                <ScalarProperty Name="sPinCode" ColumnName="sPinCode" />
+                <ScalarProperty Name="sCity" ColumnName="sCity" />
+                <ScalarProperty Name="sState" ColumnName="sState" />
+                <ScalarProperty Name="sCountry" ColumnName="sCountry" />
+                <ScalarProperty Name="sSuburb" ColumnName="sSuburb" />
+                <ScalarProperty Name="sLandMark" ColumnName="sLandMark" />
+                <ScalarProperty Name="sStreet" ColumnName="sStreet" />
+                <ScalarProperty Name="sBuilding" ColumnName="sBuilding" />
+                <ScalarProperty Name="sAddressNatureIDFK" ColumnName="sAddressNatureIDFK" />
+                <ScalarProperty Name="sAddressOfIDFK" ColumnName="sAddressOfIDFK" />
+                <ScalarProperty Name="sTable" ColumnName="sTable" />
+                <ScalarProperty Name="sAddressID" ColumnName="sAddressID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="bmContacts">
+            <EntityTypeMapping TypeName="MyNotesReadModelModel.bmContact">
+              <MappingFragment StoreEntitySet="bmContact">
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="sContactNatureIdFK" ColumnName="sContactNatureIdFK" />
+                <ScalarProperty Name="sName" ColumnName="sName" />
+                <ScalarProperty Name="sContactId" ColumnName="sContactId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="bmLocationHierarchy_bmLocation">
+            <EntityTypeMapping TypeName="MyNotesReadModelModel.bmLocationHierarchy_bmLocation">
+              <MappingFragment StoreEntitySet="bmLocationHierarchy_bmLocation">
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="sDescription" ColumnName="sDescription" />
+                <ScalarProperty Name="sLocationIDFK" ColumnName="sLocationIDFK" />
+                <ScalarProperty Name="sLocationName" ColumnName="sLocationName" />
+                <ScalarProperty Name="sLocationHierarchyIDFK" ColumnName="sLocationHierarchyIDFK" />
+                <ScalarProperty Name="sLocationID" ColumnName="sLocationID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="bmUsers">
+            <EntityTypeMapping TypeName="MyNotesReadModelModel.bmUser">
+              <MappingFragment StoreEntitySet="bmUser">
+                <ScalarProperty Name="bSystem" ColumnName="bSystem" />
+                <ScalarProperty Name="bStatus" ColumnName="bStatus" />
+                <ScalarProperty Name="sPassword" ColumnName="sPassword" />
+                <ScalarProperty Name="sLoginName" ColumnName="sLoginName" />
+                <ScalarProperty Name="sUserName" ColumnName="sUserName" />
+                <ScalarProperty Name="sUserID" ColumnName="sUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BriefAllocations">
+            <EntityTypeMapping TypeName="MyNotesReadModelModel.BriefAllocation">
+              <MappingFragment StoreEntitySet="BriefAllocation">
+                <ScalarProperty Name="HeadPlannerID" ColumnName="HeadPlannerID" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="BriefNo" ColumnName="BriefNo" />
+                <ScalarProperty Name="sBriefId" ColumnName="sBriefId" />
+                <ScalarProperty Name="BriefAllocationId" ColumnName="BriefAllocationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlanCities">
+            <EntityTypeMapping TypeName="MyNotesReadModelModel.PlanCity">
+              <MappingFragment StoreEntitySet="PlanCities">
+                <ScalarProperty Name="PhotoAgId" ColumnName="PhotoAgId" />
+                <ScalarProperty Name="PlanRegionId" ColumnName="PlanRegionId" />
+                <ScalarProperty Name="PlanDetailsId" ColumnName="PlanDetailsId" />
+                <ScalarProperty Name="Budget" ColumnName="Budget" />
+                <ScalarProperty Name="PlannerID" ColumnName="PlannerID" />
+                <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+                <ScalarProperty Name="PlanRegion" ColumnName="PlanRegion" />
+                <ScalarProperty Name="PlanCitiesId" ColumnName="PlanCitiesId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlanDetails">
+            <EntityTypeMapping TypeName="MyNotesReadModelModel.PlanDetail">
+              <MappingFragment StoreEntitySet="PlanDetails">
+                <ScalarProperty Name="IsEmailSent" ColumnName="IsEmailSent" />
+                <ScalarProperty Name="photoAgId" ColumnName="photoAgId" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="ContactId" ColumnName="ContactId" />
+                <ScalarProperty Name="budget" ColumnName="budget" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="PlanNo" ColumnName="PlanNo" />
+                <ScalarProperty Name="HeadPlannerID" ColumnName="HeadPlannerID" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="BriefNo" ColumnName="BriefNo" />
+                <ScalarProperty Name="sBriefId" ColumnName="sBriefId" />
+                <ScalarProperty Name="PlanDetailsId" ColumnName="PlanDetailsId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlanRegions">
+            <EntityTypeMapping TypeName="MyNotesReadModelModel.PlanRegion">
+              <MappingFragment StoreEntitySet="PlanRegion">
+                <ScalarProperty Name="PlannerId" ColumnName="PlannerId" />
+                <ScalarProperty Name="Budget" ColumnName="Budget" />
+                <ScalarProperty Name="PlanDetailsId" ColumnName="PlanDetailsId" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="planRegionId" ColumnName="planRegionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Briefs">
+            <EntityTypeMapping TypeName="MyNotesReadModelModel.ptmPlanVersionsC">
+              <MappingFragment StoreEntitySet="ptmPlanVersionsCS">
+                <ScalarProperty Name="IsInActive" ColumnName="IsInActive" />
+                <ScalarProperty Name="bOthers" ColumnName="bOthers" />
+                <ScalarProperty Name="PublicUtitities" ColumnName="PublicUtitities" />
+                <ScalarProperty Name="TransitMedia" ColumnName="TransitMedia" />
+                <ScalarProperty Name="BusQShelter" ColumnName="BusQShelter" />
+                <ScalarProperty Name="PoleKiosks" ColumnName="PoleKiosks" />
+                <ScalarProperty Name="Buses" ColumnName="Buses" />
+                <ScalarProperty Name="BillBoard" ColumnName="BillBoard" />
+                <ScalarProperty Name="RatioAll" ColumnName="RatioAll" />
+                <ScalarProperty Name="Ratio34" ColumnName="Ratio34" />
+                <ScalarProperty Name="Ratio14" ColumnName="Ratio14" />
+                <ScalarProperty Name="Ratio13" ColumnName="Ratio13" />
+                <ScalarProperty Name="Ratio12" ColumnName="Ratio12" />
+                <ScalarProperty Name="Ratio11" ColumnName="Ratio11" />
+                <ScalarProperty Name="PartVinyl" ColumnName="PartVinyl" />
+                <ScalarProperty Name="Complete" ColumnName="Complete" />
+                <ScalarProperty Name="InVinyl" ColumnName="InVinyl" />
+                <ScalarProperty Name="sMarket4" ColumnName="sMarket4" />
+                <ScalarProperty Name="sMarket3" ColumnName="sMarket3" />
+                <ScalarProperty Name="sMarket2" ColumnName="sMarket2" />
+                <ScalarProperty Name="sMarket1" ColumnName="sMarket1" />
+                <ScalarProperty Name="sBrand5" ColumnName="sBrand5" />
+                <ScalarProperty Name="sTGSMediaB4" ColumnName="sTGSMediaB4" />
+                <ScalarProperty Name="sTargetGroupBrand4" ColumnName="sTargetGroupBrand4" />
+                <ScalarProperty Name="sTGSMediaB3" ColumnName="sTGSMediaB3" />
+                <ScalarProperty Name="sOutdoorObjective" ColumnName="sOutdoorObjective" />
+                <ScalarProperty Name="sTargetGroupBrand3" ColumnName="sTargetGroupBrand3" />
+                <ScalarProperty Name="sTGSMediaB2" ColumnName="sTGSMediaB2" />
+                <ScalarProperty Name="sTargetGroupBrand2" ColumnName="sTargetGroupBrand2" />
+                <ScalarProperty Name="sDisplayTypesSel" ColumnName="sDisplayTypesSel" />
+                <ScalarProperty Name="sTGSMediaB1" ColumnName="sTGSMediaB1" />
+                <ScalarProperty Name="sTargetGroupBrand1" ColumnName="sTargetGroupBrand1" />
+                <ScalarProperty Name="sDisplayType" ColumnName="sDisplayType" />
+                <ScalarProperty Name="nServicePer" ColumnName="nServicePer" />
+                <ScalarProperty Name="sAdMIX" ColumnName="sAdMIX" />
+                <ScalarProperty Name="sCompetitionBrand" ColumnName="sCompetitionBrand" />
+                <ScalarProperty Name="sFillLater" ColumnName="sFillLater" />
+                <ScalarProperty Name="sOthers" ColumnName="sOthers" />
+                <ScalarProperty Name="PreferredSize" ColumnName="PreferredSize" />
+                <ScalarProperty Name="nInIllumination" ColumnName="nInIllumination" />
+                <ScalarProperty Name="sTGSMedia" ColumnName="sTGSMedia" />
+                <ScalarProperty Name="sTypofVehicles" ColumnName="sTypofVehicles" />
+                <ScalarProperty Name="sTargetGroupBrand" ColumnName="sTargetGroupBrand" />
+                <ScalarProperty Name="nInPainting" ColumnName="nInPainting" />
+                <ScalarProperty Name="sBrandUSP" ColumnName="sBrandUSP" />
+                <ScalarProperty Name="nInMounting" ColumnName="nInMounting" />
+                <ScalarProperty Name="sPrefSizeOrRatios" ColumnName="sPrefSizeOrRatios" />
+                <ScalarProperty Name="sCompetitionBrand4" ColumnName="sCompetitionBrand4" />
+                <ScalarProperty Name="nInPrintBL" ColumnName="nInPrintBL" />
+                <ScalarProperty Name="sLayOutAdapLimitations" ColumnName="sLayOutAdapLimitations" />
+                <ScalarProperty Name="sResonForPrioritising" ColumnName="sResonForPrioritising" />
+                <ScalarProperty Name="sBrand4" ColumnName="sBrand4" />
+                <ScalarProperty Name="sAdObjective" ColumnName="sAdObjective" />
+                <ScalarProperty Name="nInPrintFL" ColumnName="nInPrintFL" />
+                <ScalarProperty Name="sHeadPlannerUserIDFK" ColumnName="sHeadPlannerUserIDFK" />
+                <ScalarProperty Name="dtSend" ColumnName="dtSend" />
+                <ScalarProperty Name="sTermsOfPayment" ColumnName="sTermsOfPayment" />
+                <ScalarProperty Name="sCompetitionBrand3" ColumnName="sCompetitionBrand3" />
+                <ScalarProperty Name="sPriorityMarkets" ColumnName="sPriorityMarkets" />
+                <ScalarProperty Name="dTentativeEndDate" ColumnName="dTentativeEndDate" />
+                <ScalarProperty Name="sOtherTerms" ColumnName="sOtherTerms" />
+                <ScalarProperty Name="sBrand3" ColumnName="sBrand3" />
+                <ScalarProperty Name="sPlanVersionsCSIDFK" ColumnName="sPlanVersionsCSIDFK" />
+                <ScalarProperty Name="dtSave" ColumnName="dtSave" />
+                <ScalarProperty Name="sPlannerUserIDFK" ColumnName="sPlannerUserIDFK" />
+                <ScalarProperty Name="sCompetitionBrand2" ColumnName="sCompetitionBrand2" />
+                <ScalarProperty Name="nOSDays" ColumnName="nOSDays" />
+                <ScalarProperty Name="nBriefStatus" ColumnName="nBriefStatus" />
+                <ScalarProperty Name="nNoOfDays" ColumnName="nNoOfDays" />
+                <ScalarProperty Name="nNoOfMonths" ColumnName="nNoOfMonths" />
+                <ScalarProperty Name="sBrand2" ColumnName="sBrand2" />
+                <ScalarProperty Name="sBriefNo" ColumnName="sBriefNo" />
+                <ScalarProperty Name="sBriefPreparedBy" ColumnName="sBriefPreparedBy" />
+                <ScalarProperty Name="nIllumination" ColumnName="nIllumination" />
+                <ScalarProperty Name="sCSUserIDFK" ColumnName="sCSUserIDFK" />
+                <ScalarProperty Name="dApproval" ColumnName="dApproval" />
+                <ScalarProperty Name="sCompetitionBrand1" ColumnName="sCompetitionBrand1" />
+                <ScalarProperty Name="dRequestSentTOHo" ColumnName="dRequestSentTOHo" />
+                <ScalarProperty Name="nPainting" ColumnName="nPainting" />
+                <ScalarProperty Name="sMarketingObjective" ColumnName="sMarketingObjective" />
+                <ScalarProperty Name="nOtherSTAgencyComm" ColumnName="nOtherSTAgencyComm" />
+                <ScalarProperty Name="nNoOfYears" ColumnName="nNoOfYears" />
+                <ScalarProperty Name="dTentativeStartDate" ColumnName="dTentativeStartDate" />
+                <ScalarProperty Name="sBrand1" ColumnName="sBrand1" />
+                <ScalarProperty Name="nProdAgencyCommission" ColumnName="nProdAgencyCommission" />
+                <ScalarProperty Name="nMounting" ColumnName="nMounting" />
+                <ScalarProperty Name="dDeadlineDate" ColumnName="dDeadlineDate" />
+                <ScalarProperty Name="sApprovalNo" ColumnName="sApprovalNo" />
+                <ScalarProperty Name="sApprovedPlan" ColumnName="sApprovedPlan" />
+                <ScalarProperty Name="sCPersonIDFK" ColumnName="sCPersonIDFK" />
+                <ScalarProperty Name="nPrintBL" ColumnName="nPrintBL" />
+                <ScalarProperty Name="nMountAgencyComm" ColumnName="nMountAgencyComm" />
+                <ScalarProperty Name="nBudgetValue" ColumnName="nBudgetValue" />
+                <ScalarProperty Name="sAdditionalInfo" ColumnName="sAdditionalInfo" />
+                <ScalarProperty Name="sAnyotherDetails" ColumnName="sAnyotherDetails" />
+                <ScalarProperty Name="sBudgetTypes" ColumnName="sBudgetTypes" />
+                <ScalarProperty Name="sClientBusiProfile" ColumnName="sClientBusiProfile" />
+                <ScalarProperty Name="nAgencyCommission" ColumnName="nAgencyCommission" />
+                <ScalarProperty Name="nPrintFL" ColumnName="nPrintFL" />
+                <ScalarProperty Name="sJobNo" ColumnName="sJobNo" />
+                <ScalarProperty Name="sSuffixFromList" ColumnName="sSuffixFromList" />
+                <ScalarProperty Name="sysUpdatedOn" ColumnName="sysUpdatedOn" />
+                <ScalarProperty Name="sysUpdatedBy" ColumnName="sysUpdatedBy" />
+                <ScalarProperty Name="sysCreatedOn" ColumnName="sysCreatedOn" />
+                <ScalarProperty Name="sysCreatedBy" ColumnName="sysCreatedBy" />
+                <ScalarProperty Name="nAdjustmentAmount" ColumnName="nAdjustmentAmount" />
+                <ScalarProperty Name="bAuthenticate" ColumnName="bAuthenticate" />
+                <ScalarProperty Name="nFCNetAmount" ColumnName="nFCNetAmount" />
+                <ScalarProperty Name="sCurrencyIDFk" ColumnName="sCurrencyIDFk" />
+                <ScalarProperty Name="nExRate" ColumnName="nExRate" />
+                <ScalarProperty Name="nNetAmount" ColumnName="nNetAmount" />
+                <ScalarProperty Name="nAddlessAmount" ColumnName="nAddlessAmount" />
+                <ScalarProperty Name="nGrossAmount" ColumnName="nGrossAmount" />
+                <ScalarProperty Name="sMiddleManContactIDFK" ColumnName="sMiddleManContactIDFK" />
+                <ScalarProperty Name="sContactIDFK" ColumnName="sContactIDFK" />
+                <ScalarProperty Name="sPrefixFromText" ColumnName="sPrefixFromText" />
+                <ScalarProperty Name="sPrefixFromList" ColumnName="sPrefixFromList" />
+                <ScalarProperty Name="nVoucher" ColumnName="nVoucher" />
+                <ScalarProperty Name="dtVoucher" ColumnName="dtVoucher" />
+                <ScalarProperty Name="sCompanyIdfk" ColumnName="sCompanyIdfk" />
+                <ScalarProperty Name="sPlanVersionsCSID" ColumnName="sPlanVersionsCSID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NoteItems">
+            <EntityTypeMapping TypeName="MyNotesReadModelModel.NoteItem">
+              <MappingFragment StoreEntitySet="NoteItem">
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlanSites">
+            <EntityTypeMapping TypeName="MyNotesReadModelModel.PlanSite">
+              <MappingFragment StoreEntitySet="PlanSite">
+                <ScalarProperty Name="chargingBasis" ColumnName="chargingBasis" />
+                <ScalarProperty Name="FabricationStatus" ColumnName="FabricationStatus" />
+                <ScalarProperty Name="PrintingStatus" ColumnName="PrintingStatus" />
+                <ScalarProperty Name="MountingStatus" ColumnName="MountingStatus" />
+                <ScalarProperty Name="DisplayStatus" ColumnName="DisplayStatus" />
+                <ScalarProperty Name="PrintVendor" ColumnName="PrintVendor" />
+                <ScalarProperty Name="SiteSizeInSqFt" ColumnName="SiteSizeInSqFt" />
+                <ScalarProperty Name="IsInActive" ColumnName="IsInActive" />
+                <ScalarProperty Name="CreativeDescription" ColumnName="CreativeDescription" />
+                <ScalarProperty Name="CreativeAppliedId" ColumnName="CreativeAppliedId" />
+                <ScalarProperty Name="MountingClientCost" ColumnName="MountingClientCost" />
+                <ScalarProperty Name="MountingClientRate" ColumnName="MountingClientRate" />
+                <ScalarProperty Name="MountingCost" ColumnName="MountingCost" />
+                <ScalarProperty Name="MountingRate" ColumnName="MountingRate" />
+                <ScalarProperty Name="MountingVendor" ColumnName="MountingVendor" />
+                <ScalarProperty Name="FabricationClientCost" ColumnName="FabricationClientCost" />
+                <ScalarProperty Name="FabricationClientRate" ColumnName="FabricationClientRate" />
+                <ScalarProperty Name="FabricationCost" ColumnName="FabricationCost" />
+                <ScalarProperty Name="FabricationRate" ColumnName="FabricationRate" />
+                <ScalarProperty Name="FabricationVendor" ColumnName="FabricationVendor" />
+                <ScalarProperty Name="PrintClientCost" ColumnName="PrintClientCost" />
+                <ScalarProperty Name="PrintClientRate" ColumnName="PrintClientRate" />
+                <ScalarProperty Name="PrintSqFt" ColumnName="PrintSqFt" />
+                <ScalarProperty Name="PrintCost" ColumnName="PrintCost" />
+                <ScalarProperty Name="PrintRate" ColumnName="PrintRate" />
+                <ScalarProperty Name="DisplayClientCost" ColumnName="DisplayClientCost" />
+                <ScalarProperty Name="DisplayClientRate" ColumnName="DisplayClientRate" />
+                <ScalarProperty Name="ClientToDate" ColumnName="ClientToDate" />
+                <ScalarProperty Name="ClientFromDate" ColumnName="ClientFromDate" />
+                <ScalarProperty Name="DisplayToDate" ColumnName="DisplayToDate" />
+                <ScalarProperty Name="DisplayFromDate" ColumnName="DisplayFromDate" />
+                <ScalarProperty Name="DisplayCost" ColumnName="DisplayCost" />
+                <ScalarProperty Name="DisplayRate" ColumnName="DisplayRate" />
+                <ScalarProperty Name="DisplayVendor" ColumnName="DisplayVendor" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="Days" ColumnName="Days" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="NoOfFaces" ColumnName="NoOfFaces" />
+                <ScalarProperty Name="MediaType" ColumnName="MediaType" />
+                <ScalarProperty Name="SizeRatio" ColumnName="SizeRatio" />
+                <ScalarProperty Name="V" ColumnName="V" />
+                <ScalarProperty Name="H" ColumnName="H" />
+                <ScalarProperty Name="illumination" ColumnName="illumination" />
+                <ScalarProperty Name="siteSize" ColumnName="siteSize" />
+                <ScalarProperty Name="addressline3" ColumnName="addressline3" />
+                <ScalarProperty Name="addressline2" ColumnName="addressline2" />
+                <ScalarProperty Name="addressline1" ColumnName="addressline1" />
+                <ScalarProperty Name="siteName" ColumnName="siteName" />
+                <ScalarProperty Name="siteNo" ColumnName="siteNo" />
+                <ScalarProperty Name="planSiteId" ColumnName="planSiteId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SiteMasters">
+            <EntityTypeMapping TypeName="MyNotesReadModelModel.SiteMaster">
+              <MappingFragment StoreEntitySet="SiteMaster">
+                <ScalarProperty Name="siteNoChar" ColumnName="siteNoChar" />
+                <ScalarProperty Name="NoOfFaces" ColumnName="NoOfFaces" />
+                <ScalarProperty Name="MediaType" ColumnName="MediaType" />
+                <ScalarProperty Name="SizeRatio" ColumnName="SizeRatio" />
+                <ScalarProperty Name="V" ColumnName="V" />
+                <ScalarProperty Name="H" ColumnName="H" />
+                <ScalarProperty Name="illumination" ColumnName="illumination" />
+                <ScalarProperty Name="siteSize" ColumnName="siteSize" />
+                <ScalarProperty Name="addressline3" ColumnName="addressline3" />
+                <ScalarProperty Name="addressline2" ColumnName="addressline2" />
+                <ScalarProperty Name="addressline1" ColumnName="addressline1" />
+                <ScalarProperty Name="vendor" ColumnName="vendor" />
+                <ScalarProperty Name="siteName" ColumnName="siteName" />
+                <ScalarProperty Name="siteNo" ColumnName="siteNo" />
+                <ScalarProperty Name="siteId" ColumnName="siteId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="fk_plansite_plancity" TypeName="MyNotesReadModelModel.fk_plansite_plancity" StoreEntitySet="PlanSite">
+            <EndProperty Name="PlanSite">
+              <ScalarProperty Name="planSiteId" ColumnName="planSiteId" />
+            </EndProperty>
+            <EndProperty Name="PlanCity">
+              <ScalarProperty Name="PlanCitiesId" ColumnName="planCityId" />
+            </EndProperty>
+            <Condition ColumnName="planCityId" IsNull="false" />
+          </AssociationSetMapping>
+          <EntitySetMapping Name="Series">
+            <EntityTypeMapping TypeName="MyNotesReadModelModel.Series">
+              <MappingFragment StoreEntitySet="Series">
+                <ScalarProperty Name="seed" ColumnName="seed" />
+                <ScalarProperty Name="columnName" ColumnName="columnName" />
+                <ScalarProperty Name="tableName" ColumnName="tableName" />
+                <ScalarProperty Name="seriesId" ColumnName="seriesId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SeriesTransactions">
+            <EntityTypeMapping TypeName="MyNotesReadModelModel.SeriesTransaction">
+              <MappingFragment StoreEntitySet="SeriesTransaction">
+                <ScalarProperty Name="criteria2" ColumnName="criteria2" />
+                <ScalarProperty Name="criteria1" ColumnName="criteria1" />
+                <ScalarProperty Name="maxNo" ColumnName="maxNo" />
+                <ScalarProperty Name="seriesId" ColumnName="seriesId" />
+                <ScalarProperty Name="seriesTransactionId" ColumnName="seriesTransactionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlanAlbums">
+            <EntityTypeMapping TypeName="MyNotesReadModelModel.PlanAlbum">
+              <MappingFragment StoreEntitySet="PlanAlbum">
+                <ScalarProperty Name="AlbumNo" ColumnName="AlbumNo" />
+                <ScalarProperty Name="planDetailsId" ColumnName="planDetailsId" />
+                <ScalarProperty Name="planAlbumId" ColumnName="planAlbumId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlanAlbumSitePhotos">
+            <EntityTypeMapping TypeName="MyNotesReadModelModel.PlanAlbumSitePhoto">
+              <MappingFragment StoreEntitySet="PlanAlbumSitePhotos">
+                <ScalarProperty Name="planAlbumId" ColumnName="planAlbumId" />
+                <ScalarProperty Name="bIsAssigned" ColumnName="bIsAssigned" />
+                <ScalarProperty Name="Tags" ColumnName="Tags" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="PhotoName" ColumnName="PhotoName" />
+                <ScalarProperty Name="PlanCityId" ColumnName="PlanCityId" />
+                <ScalarProperty Name="PlanSiteId" ColumnName="PlanSiteId" />
+                <ScalarProperty Name="PlanAlbumSitePhotosId" ColumnName="PlanAlbumSitePhotosId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ReadModel1" ZoomLevel="52">
+        <EntityTypeShape EntityType="MyNotesReadModelModel.AllocatedRegionAndCity" Width="1.5" PointX="3" PointY="2.625" Height="2.7494921874999818" />
+        <EntityTypeShape EntityType="MyNotesReadModelModel.bmAddress" Width="2.375" PointX="4.75" PointY="6.75" Height="3.7109993489583335" />
+        <EntityTypeShape EntityType="MyNotesReadModelModel.bmContact" Width="3.5" PointX="6.75" PointY="6.75" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="MyNotesReadModelModel.bmLocationHierarchy_bmLocation" Width="1.5" PointX="0.75" PointY="1.875" Height="2.7494921874999996" />
+        <EntityTypeShape EntityType="MyNotesReadModelModel.bmUser" Width="1.5" PointX="0.75" PointY="7" Height="2.7494921874999996" />
+        <EntityTypeShape EntityType="MyNotesReadModelModel.BriefAllocation" Width="1.5" PointX="0.75" PointY="11.75" Height="2.3648893229167243" />
+        <EntityTypeShape EntityType="MyNotesReadModelModel.PlanCity" Width="1.5" PointX="6" PointY="2.875" Height="3.0714322916666656" />
+        <EntityTypeShape EntityType="MyNotesReadModelModel.PlanDetail" Width="1.5" PointX="5" PointY="18.75" Height="3.1340950520834667" />
+        <EntityTypeShape EntityType="MyNotesReadModelModel.PlanRegion" Width="1.5" PointX="7.25" PointY="19.375" Height="1.7879850260414969" />
+        <EntityTypeShape EntityType="MyNotesReadModelModel.ptmPlanVersionsC" Width="1.5" PointX="2.75" PointY="8" Height="24.479554036458463" />
+        <AssociationConnector Association="MyNotesReadModelModel.fk_AllocatedRegionAndCities_bmLocationHierarchy_bmLocation">
+          <ConnectorPoint PointX="2.25" PointY="3.62474609375" />
+          <ConnectorPoint PointX="3" PointY="3.62474609375" />
+        </AssociationConnector>
+        <AssociationConnector Association="MyNotesReadModelModel.fk_AllocatedRegionAndCities_bmuser">
+          <ConnectorPoint PointX="2.25" PointY="7.3750005000000005" />
+          <ConnectorPoint PointX="3.5885396666666667" PointY="7.3750005" />
+          <ConnectorPoint PointX="3.7552063333333336" PointY="7.3750005000000005" />
+          <ConnectorPoint PointX="4.40625" PointY="7.3750005000000005" />
+          <ConnectorPoint PointX="4.40625" PointY="5.3744921874999818" />
+        </AssociationConnector>
+        <AssociationConnector Association="MyNotesReadModelModel.FK_AllocatedRegionAndCities_BriefAllocation">
+          <ConnectorPoint PointX="2.25" PointY="12.792674153645834" />
+          <ConnectorPoint PointX="2.5" PointY="12.792674153645834" />
+          <ConnectorPoint PointX="2.5" PointY="7.75" />
+          <ConnectorPoint PointX="3.671873" PointY="7.75" />
+          <ConnectorPoint PointX="3.671873" PointY="5.03904296875" />
+        </AssociationConnector>
+        <AssociationConnector Association="MyNotesReadModelModel.FK_bmLocationHierarchy_bmLocation_bmLocationHierarchy_bmLocation">
+          <ConnectorPoint PointX="1.2819230769230767" PointY="4.6244921875" />
+          <ConnectorPoint PointX="1.2819230769230767" PointY="4.8744921875" />
+          <ConnectorPoint PointX="1.7284615384615383" PointY="4.8744921875" />
+          <ConnectorPoint PointX="1.7284615384615383" PointY="4.6244921875" />
+        </AssociationConnector>
+        <AssociationConnector Association="MyNotesReadModelModel.fk_plancities_bmlocationhiearchy">
+          <ConnectorPoint PointX="2.25" PointY="2.21875" />
+          <ConnectorPoint PointX="6.75" PointY="2.21875" />
+          <ConnectorPoint PointX="6.75" PointY="2.875" />
+        </AssociationConnector>
+        <AssociationConnector Association="MyNotesReadModelModel.FK_BriefAllocation_bmuser">
+          <ConnectorPoint PointX="1.5" PointY="9.7494921875" />
+          <ConnectorPoint PointX="1.5" PointY="11.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="MyNotesReadModelModel.fk_plancities_bmuser">
+          <ConnectorPoint PointX="1.5" PointY="7" />
+          <ConnectorPoint PointX="1.5" PointY="5.6244921874999818" />
+          <ConnectorPoint PointX="3.5885396666666667" PointY="5.6244921874999809" />
+          <ConnectorPoint PointX="3.7552063333333336" PointY="5.6244921874999818" />
+          <ConnectorPoint PointX="4.322916666666667" PointY="5.6244921874999809" />
+          <ConnectorPoint PointX="4.489583333333333" PointY="5.6244921874999818" />
+          <ConnectorPoint PointX="5.625" PointY="5.6244921874999818" />
+          <ConnectorPoint PointX="5.625" PointY="4.6343489583333328" />
+          <ConnectorPoint PointX="5.666666666666667" PointY="4.6343489583333319" />
+          <ConnectorPoint PointX="5.833333333333333" PointY="4.6343489583333328" />
+          <ConnectorPoint PointX="6" PointY="4.6343489583333328" />
+        </AssociationConnector>
+        <AssociationConnector Association="MyNotesReadModelModel.fk_plan_briefmaster_briefid">
+          <ConnectorPoint PointX="4.25" PointY="20.701650390625" />
+          <ConnectorPoint PointX="5" PointY="20.701650390625" />
+        </AssociationConnector>
+        <AssociationConnector Association="MyNotesReadModelModel.fk_PlanRegion_plan">
+          <ConnectorPoint PointX="6.5" PointY="21.005723456860775" />
+          <ConnectorPoint PointX="7.25" PointY="21.005723456860775" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="MyNotesReadModelModel.NoteItem" Width="1.5" PointX="8.375" PointY="0.75" Height="1.5956835937499818" />
+        <EntityTypeShape EntityType="MyNotesReadModelModel.PlanSite" Width="1.5" PointX="9.375" PointY="9.75" Height="11.595358072916667" />
+        <EntityTypeShape EntityType="MyNotesReadModelModel.SiteMaster" Width="1.5" PointX="10.375" PointY="0.75" Height="3.7109993489583388" />
+        <AssociationConnector Association="MyNotesReadModelModel.fk_plansite_plancity">
+          <ConnectorPoint PointX="7.5" PointY="5.154046476681434" />
+          <ConnectorPoint PointX="10.125" PointY="5.154046476681434" />
+          <ConnectorPoint PointX="10.125" PointY="6.5" />
+          <ConnectorPoint PointX="10.5" PointY="6.5" />
+          <ConnectorPoint PointX="10.5" PointY="9.375" />
+          <ConnectorPoint PointX="10.542646500732422" PointY="9.375" />
+          <ConnectorPoint PointX="10.542646500732422" PointY="9.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="MyNotesReadModelModel.FK_Plansite_displayVendor1">
+          <ConnectorPoint PointX="9.92210578918457" PointY="9.1148893229166656" />
+          <ConnectorPoint PointX="9.92210578918457" PointY="9.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="MyNotesReadModelModel.FK_Plansite_FabricationVendor">
+          <ConnectorPoint PointX="10.148552894592285" PointY="9.1148893229166656" />
+          <ConnectorPoint PointX="10.148552894592285" PointY="9.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="MyNotesReadModelModel.FK_Plansite_MountingVendor">
+          <ConnectorPoint PointX="9.4732112884521484" PointY="9.1148893229166656" />
+          <ConnectorPoint PointX="9.4732112884521484" PointY="9.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="MyNotesReadModelModel.fk_plansite_bmcontact_printvendor">
+          <ConnectorPoint PointX="9.69765853881836" PointY="9.1148893229166656" />
+          <ConnectorPoint PointX="9.69765853881836" PointY="9.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="MyNotesReadModelModel.fk_planregion_plancities">
+          <ConnectorPoint PointX="7.25" PointY="20.159109728430387" />
+          <ConnectorPoint PointX="6.875" PointY="20.159109728430387" />
+          <ConnectorPoint PointX="6.875" PointY="10.710999348958334" />
+          <ConnectorPoint PointX="4.625" PointY="10.710999348958334" />
+          <ConnectorPoint PointX="4.625" PointY="6.6436979166666656" />
+          <ConnectorPoint PointX="5.75" PointY="6.6436979166666656" />
+          <ConnectorPoint PointX="5.75" PointY="2.5" />
+          <ConnectorPoint PointX="6.666666666666667" PointY="2.4999999999999996" />
+          <ConnectorPoint PointX="6.833333333333333" PointY="2.5" />
+          <ConnectorPoint PointX="7.875" PointY="2.5" />
+          <ConnectorPoint PointX="7.875" PointY="3.9832712383407163" />
+          <ConnectorPoint PointX="7.5" PointY="3.9832712383407163" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="MyNotesReadModelModel.Series" Width="1.5" PointX="11.375" PointY="6" Height="1.9802864583333388" />
+        <EntityTypeShape EntityType="MyNotesReadModelModel.SeriesTransaction" Width="1.5" PointX="13.625" PointY="5.875" Height="2.1725878906250031" />
+        <AssociationConnector Association="MyNotesReadModelModel.FK__SeriesTra__serie__0D8054E0" >
+          <ConnectorPoint PointX="12.875" PointY="6.9901432291666694" />
+          <ConnectorPoint PointX="12.947916666666666" PointY="6.9901432291666685" />
+          <ConnectorPoint PointX="13.114583333333334" PointY="6.9901432291666694" />
+          <ConnectorPoint PointX="13.625" PointY="6.9901432291666694" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="MyNotesReadModelModel.PlanAlbum" Width="1.5" PointX="9.375" PointY="23.375" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="MyNotesReadModelModel.PlanAlbumSitePhoto" Width="1.5" PointX="11.625" PointY="10.75" Height="3.1340950520833388" />
+        <AssociationConnector Association="MyNotesReadModelModel.fk_PlanAlbum_planDetailsId" >
+          <ConnectorPoint PointX="5.75" PointY="22.653300781250003" />
+          <ConnectorPoint PointX="5.75" PointY="24.268992513020834" />
+          <ConnectorPoint PointX="9.375" PointY="24.268992513020834" />
+        </AssociationConnector>
+        <AssociationConnector Association="MyNotesReadModelModel.fk_sitephotos_planalbum" >
+          <ConnectorPoint PointX="10.875" PointY="24.268992513020834" />
+          <ConnectorPoint PointX="12.375" PointY="24.268992513020834" />
+          <ConnectorPoint PointX="12.375" PointY="13.884095052083339" />
+        </AssociationConnector>
+        <AssociationConnector Association="MyNotesReadModelModel.fk_plansite_SitePhotos" >
+          <ConnectorPoint PointX="10.875" PointY="12.317047526041669" />
+          <ConnectorPoint PointX="11.625" PointY="12.317047526041669" />
+        </AssociationConnector>
+        <AssociationConnector Association="MyNotesReadModelModel.fk_sitephotos_plancities" >
+          <ConnectorPoint PointX="7.5" PointY="5.5770257383407174" />
+          <ConnectorPoint PointX="10.041666666666666" PointY="5.5770257383407165" />
+          <ConnectorPoint PointX="10.208333333333334" PointY="5.5770257383407174" />
+          <ConnectorPoint PointX="13.03125" PointY="5.5770257383407174" />
+          <ConnectorPoint PointX="13.03125" PointY="10.75" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

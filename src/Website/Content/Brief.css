@@ -1,0 +1,94 @@
+﻿body {
+}
+.hidden 
+{
+    visibility:hidden;
+}
+.HalfBlock
+{
+    width: 50%;
+    float:left;   
+    margin:2em 2em 2em 2em;
+}
+.BlockTd
+{
+    vertical-align:top;  
+}
+.MultiLineTextBox
+{
+    vertical-align:top;
+    height: 100%;
+    width:100%;
+}
+#ClientBusinessProfile,
+#AdObjective,
+#OutDoorObjective,
+#AdMix
+{
+    width:100%;
+    height: 2em;
+}
+#AdditionalInfo
+{
+    width:100%;
+    height: 3em;
+}
+#NoOfYears,
+#NoOfMonths,
+#NoOfDays
+{
+    width:3em;
+}
+#LayoutAdapLimitations
+{
+    width:5em;
+}
+
+.Width50px
+{
+    width: 100px;
+}
+----------------------------------------------------------*/
+table.grid 
+{
+	width: 100%;
+	border: 1px solid #CCCCCC;
+	padding: 2px;
+	margin: 0;
+}
+
+	table.grid th 
+	{
+		background-color: #5C87B2;
+		color: #FFFFFF;
+		text-align: left;
+	}
+
+	table.grid tr.item 
+	{
+	}
+	
+	table.grid tr.item-alternating
+	{
+		background-color: #EFEFEF;
+	}
+	
+	table.grid tr.item-edit
+	{
+		background-color: #FFE97F;
+	}
+	
+	table.grid tr.paging
+	{
+		text-align: center;
+	}
+	
+	table.grid tr td
+	{
+		padding: 2px;
+	}
+	
+	table.grid tr td img
+	{
+		border: 0;
+	}
