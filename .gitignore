@@ -3,7 +3,6 @@ obj
 bin
 *.csproj.user
 *.sql
-*.md
 
 # Resharper
 *ReSharper*
