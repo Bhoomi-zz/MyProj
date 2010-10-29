@@ -1,4 +1,4 @@
-MY Website SAMPLE APPLICATION
+MY Website 
 ===========================
 
 This sample application contains the basic components of an cqrs bases 
