@@ -28,6 +28,7 @@ namespace Website
         protected void Application_Start()
         {
             //Testing only
+            //Second Comment...
             AreaRegistration.RegisterAllAreas();
               
             RegisterRoutes(RouteTable.Routes);
