@@ -1,0 +1,23 @@
+# Standard VS.NET
+obj
+bin
+*.csproj.user
+*.sql
+
+# Resharper
+*ReSharper*
+*resharper*
+*.suo
+*.cache
+
+# Other useful stuff
+* Thumbs.db
+*.bak
+*.cache
+*.log
+*.swp
+*.user
+
+# Ncqrs in non framework solution
+/Extensions/lib/Ncqrs/*
+/Samples/MyNotes/lib/*

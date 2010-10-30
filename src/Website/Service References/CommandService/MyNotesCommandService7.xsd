@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/CommonDTOs" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CommonDTOs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/MyNotesCommandService/MyNotesCommandService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfRegionsAndCitiesDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RegionsAndCitiesDTO" nillable="true" type="tns:RegionsAndCitiesDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRegionsAndCitiesDTO" nillable="true" type="tns:ArrayOfRegionsAndCitiesDTO" />
+  <xs:complexType name="RegionsAndCitiesDTO">
+    <xs:sequence>
+      <xs:element name="_x003C_Budget_x003E_k__BackingField" type="xs:decimal" />
+      <xs:element name="_x003C_LocationId_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_PlannerId_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Region_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_RegionsAndCitiesId_x003E_k__BackingField" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegionsAndCitiesDTO" nillable="true" type="tns:RegionsAndCitiesDTO" />
+  <xs:complexType name="PlanRegionsDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Budget" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PlanRegionId" type="ser:guid" />
+      <xs:element minOccurs="0" name="PlannerId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Region" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlanRegionsDTO" nillable="true" type="tns:PlanRegionsDTO" />
+  <xs:complexType name="PlanCityDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Budget" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LocationId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlanCitiesId" type="ser:guid" />
+      <xs:element minOccurs="0" name="PlannerId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Region" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlanCityDTO" nillable="true" type="tns:PlanCityDTO" />
+  <xs:complexType name="PlanSiteDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Addressline1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Addressline2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Addressline3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Days" type="xs:int" />
+      <xs:element minOccurs="0" name="DisplayCost" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DisplayFromDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DisplayRate" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DisplayToDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DisplayVendor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="H" type="xs:int" />
+      <xs:element minOccurs="0" name="Illumination" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MediaType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NoOfFaces" type="xs:int" />
+      <xs:element minOccurs="0" name="PlanCityId" type="ser:guid" />
+      <xs:element minOccurs="0" name="PlanSiteId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Qty" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiteNo" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteSize" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SizeRatio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="V" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlanSiteDTO" nillable="true" type="tns:PlanSiteDTO" />
+  <xs:complexType name="PlanSiteDisplayInfoDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayClientCost" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DisplayClientRate" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DisplayCost" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DisplayFromDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DisplayRate" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DisplayToDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DisplayVendor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlanCityId" type="ser:guid" />
+      <xs:element minOccurs="0" name="PlanSiteId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlanSiteDisplayInfoDTO" nillable="true" type="tns:PlanSiteDisplayInfoDTO" />
+  <xs:complexType name="PlanSiteMountingInfoDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MountingClientCost" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MountingClientRate" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MountingCost" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MountingRate" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MountingVendor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlanCityId" type="ser:guid" />
+      <xs:element minOccurs="0" name="PlanSiteId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlanSiteMountingInfoDTO" nillable="true" type="tns:PlanSiteMountingInfoDTO" />
+  <xs:complexType name="ArrayOfSiteVendorAssignmentDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SiteVendorAssignmentDTO" nillable="true" type="tns:SiteVendorAssignmentDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSiteVendorAssignmentDTO" nillable="true" type="tns:ArrayOfSiteVendorAssignmentDTO" />
+  <xs:complexType name="SiteVendorAssignmentDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChargingBasis" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientCost" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ClientRate" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Cost" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PlanCityId" type="ser:guid" />
+      <xs:element minOccurs="0" name="PlanSiteId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Rate" type="xs:decimal" />
+      <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vendor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VendorType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SiteVendorAssignmentDTO" nillable="true" type="tns:SiteVendorAssignmentDTO" />
+  <xs:complexType name="ArrayOfPhotoDetailDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PhotoDetailDTO" nillable="true" type="tns:PhotoDetailDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPhotoDetailDTO" nillable="true" type="tns:ArrayOfPhotoDetailDTO" />
+  <xs:complexType name="PhotoDetailDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FilePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhotoId" type="ser:guid" />
+      <xs:element minOccurs="0" name="PlanCityId" type="ser:guid" />
+      <xs:element minOccurs="0" name="PlanSiteId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Tags" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PhotoDetailDTO" nillable="true" type="tns:PhotoDetailDTO" />
+</xs:schema>

@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MyNotesCommandService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:39531/MyNotesCommandService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:39531/MyNotesCommandService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:39531/MyNotesCommandService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Commands" />
+      <xsd:import schemaLocation="http://localhost:39531/MyNotesCommandService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Ncqrs.Commanding" />
+      <xsd:import schemaLocation="http://localhost:39531/MyNotesCommandService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/CommonDTOs" />
+      <xsd:import schemaLocation="http://localhost:39531/MyNotesCommandService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IMyNotesCommandService_CreateNewNote_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewNote" />
+  </wsdl:message>
+  <wsdl:message name="IMyNotesCommandService_CreateNewNote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyNotesCommandService_ChangeNoteText_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeNoteText" />
+  </wsdl:message>
+  <wsdl:message name="IMyNotesCommandService_ChangeNoteText_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeNoteTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyNotesCommandService_CreateNewBrief_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewBrief" />
+  </wsdl:message>
+  <wsdl:message name="IMyNotesCommandService_CreateNewBrief_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewBriefResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyNotesCommandService_ChangeBrief_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeBrief" />
+  </wsdl:message>
+  <wsdl:message name="IMyNotesCommandService_ChangeBrief_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeBriefResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyNotesCommandService_CreateBriefAllocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBriefAllocation" />
+  </wsdl:message>
+  <wsdl:message name="IMyNotesCommandService_CreateBriefAllocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBriefAllocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyNotesCommandService_ChangeBriefAllocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeBriefAllocation" />
+  </wsdl:message>
+  <wsdl:message name="IMyNotesCommandService_ChangeBriefAllocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeBriefAllocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyNotesCommandService_CreatePlan_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePlan" />
+  </wsdl:message>
+  <wsdl:message name="IMyNotesCommandService_CreatePlan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyNotesCommandService_ChangePlan_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePlan" />
+  </wsdl:message>
+  <wsdl:message name="IMyNotesCommandService_ChangePlan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyNotesCommandService_CreateRegionInPlan_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRegionInPlan" />
+  </wsdl:message>
+  <wsdl:message name="IMyNotesCommandService_CreateRegionInPlan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRegionInPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyNotesCommandService_CreateOrChangeCitiesInPlan_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrChangeCitiesInPlan" />
+  </wsdl:message>
+  <wsdl:message name="IMyNotesCommandService_CreateOrChangeCitiesInPlan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrChangeCitiesInPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyNotesCommandService_CreateOrChangeSitesInPlan_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrChangeSitesInPlan" />
+  </wsdl:message>
+  <wsdl:message name="IMyNotesCommandService_CreateOrChangeSitesInPlan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrChangeSitesInPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyNotesCommandService_ChangeSiteDisplayInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeSiteDisplayInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMyNotesCommandService_ChangeSiteDisplayInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeSiteDisplayInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyNotesCommandService_ChangeSiteMountingInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeSiteMountingInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMyNotesCommandService_ChangeSiteMountingInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeSiteMountingInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyNotesCommandService_AssignVendorToSitesInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssignVendorToSitesInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMyNotesCommandService_AssignVendorToSitesInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssignVendorToSitesInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyNotesCommandService_AddPhotoToSite_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPhotoToSite" />
+  </wsdl:message>
+  <wsdl:message name="IMyNotesCommandService_AddPhotoToSite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPhotoToSiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyNotesCommandService_AddOrEditPhotoToSite_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrEditPhotoToSite" />
+  </wsdl:message>
+  <wsdl:message name="IMyNotesCommandService_AddOrEditPhotoToSite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrEditPhotoToSiteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IMyNotesCommandService">
+    <wsdl:operation name="CreateNewNote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyNotesCommandService/CreateNewNote" message="tns:IMyNotesCommandService_CreateNewNote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyNotesCommandService/CreateNewNoteResponse" message="tns:IMyNotesCommandService_CreateNewNote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeNoteText">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyNotesCommandService/ChangeNoteText" message="tns:IMyNotesCommandService_ChangeNoteText_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyNotesCommandService/ChangeNoteTextResponse" message="tns:IMyNotesCommandService_ChangeNoteText_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewBrief">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyNotesCommandService/CreateNewBrief" message="tns:IMyNotesCommandService_CreateNewBrief_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyNotesCommandService/CreateNewBriefResponse" message="tns:IMyNotesCommandService_CreateNewBrief_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeBrief">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyNotesCommandService/ChangeBrief" message="tns:IMyNotesCommandService_ChangeBrief_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyNotesCommandService/ChangeBriefResponse" message="tns:IMyNotesCommandService_ChangeBrief_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateBriefAllocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyNotesCommandService/CreateBriefAllocation" message="tns:IMyNotesCommandService_CreateBriefAllocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyNotesCommandService/CreateBriefAllocationResponse" message="tns:IMyNotesCommandService_CreateBriefAllocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeBriefAllocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyNotesCommandService/ChangeBriefAllocation" message="tns:IMyNotesCommandService_ChangeBriefAllocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyNotesCommandService/ChangeBriefAllocationResponse" message="tns:IMyNotesCommandService_ChangeBriefAllocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePlan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyNotesCommandService/CreatePlan" message="tns:IMyNotesCommandService_CreatePlan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyNotesCommandService/CreatePlanResponse" message="tns:IMyNotesCommandService_CreatePlan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePlan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyNotesCommandService/ChangePlan" message="tns:IMyNotesCommandService_ChangePlan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyNotesCommandService/ChangePlanResponse" message="tns:IMyNotesCommandService_ChangePlan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateRegionInPlan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyNotesCommandService/CreateRegionInPlan" message="tns:IMyNotesCommandService_CreateRegionInPlan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyNotesCommandService/CreateRegionInPlanResponse" message="tns:IMyNotesCommandService_CreateRegionInPlan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrChangeCitiesInPlan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyNotesCommandService/CreateOrChangeCitiesInPlan" message="tns:IMyNotesCommandService_CreateOrChangeCitiesInPlan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyNotesCommandService/CreateOrChangeCitiesInPlanResponse" message="tns:IMyNotesCommandService_CreateOrChangeCitiesInPlan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrChangeSitesInPlan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyNotesCommandService/CreateOrChangeSitesInPlan" message="tns:IMyNotesCommandService_CreateOrChangeSitesInPlan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyNotesCommandService/CreateOrChangeSitesInPlanResponse" message="tns:IMyNotesCommandService_CreateOrChangeSitesInPlan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeSiteDisplayInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyNotesCommandService/ChangeSiteDisplayInfo" message="tns:IMyNotesCommandService_ChangeSiteDisplayInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyNotesCommandService/ChangeSiteDisplayInfoResponse" message="tns:IMyNotesCommandService_ChangeSiteDisplayInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeSiteMountingInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyNotesCommandService/ChangeSiteMountingInfo" message="tns:IMyNotesCommandService_ChangeSiteMountingInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyNotesCommandService/ChangeSiteMountingInfoResponse" message="tns:IMyNotesCommandService_ChangeSiteMountingInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssignVendorToSitesInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyNotesCommandService/AssignVendorToSitesInfo" message="tns:IMyNotesCommandService_AssignVendorToSitesInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyNotesCommandService/AssignVendorToSitesInfoResponse" message="tns:IMyNotesCommandService_AssignVendorToSitesInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPhotoToSite">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyNotesCommandService/AddPhotoToSite" message="tns:IMyNotesCommandService_AddPhotoToSite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyNotesCommandService/AddPhotoToSiteResponse" message="tns:IMyNotesCommandService_AddPhotoToSite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrEditPhotoToSite">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyNotesCommandService/AddOrEditPhotoToSite" message="tns:IMyNotesCommandService_AddOrEditPhotoToSite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyNotesCommandService/AddOrEditPhotoToSiteResponse" message="tns:IMyNotesCommandService_AddOrEditPhotoToSite_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IMyNotesCommandService" type="tns:IMyNotesCommandService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateNewNote">
+      <soap:operation soapAction="http://tempuri.org/IMyNotesCommandService/CreateNewNote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeNoteText">
+      <soap:operation soapAction="http://tempuri.org/IMyNotesCommandService/ChangeNoteText" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewBrief">
+      <soap:operation soapAction="http://tempuri.org/IMyNotesCommandService/CreateNewBrief" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeBrief">
+      <soap:operation soapAction="http://tempuri.org/IMyNotesCommandService/ChangeBrief" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBriefAllocation">
+      <soap:operation soapAction="http://tempuri.org/IMyNotesCommandService/CreateBriefAllocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeBriefAllocation">
+      <soap:operation soapAction="http://tempuri.org/IMyNotesCommandService/ChangeBriefAllocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePlan">
+      <soap:operation soapAction="http://tempuri.org/IMyNotesCommandService/CreatePlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePlan">
+      <soap:operation soapAction="http://tempuri.org/IMyNotesCommandService/ChangePlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateRegionInPlan">
+      <soap:operation soapAction="http://tempuri.org/IMyNotesCommandService/CreateRegionInPlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrChangeCitiesInPlan">
+      <soap:operation soapAction="http://tempuri.org/IMyNotesCommandService/CreateOrChangeCitiesInPlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrChangeSitesInPlan">
+      <soap:operation soapAction="http://tempuri.org/IMyNotesCommandService/CreateOrChangeSitesInPlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeSiteDisplayInfo">
+      <soap:operation soapAction="http://tempuri.org/IMyNotesCommandService/ChangeSiteDisplayInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeSiteMountingInfo">
+      <soap:operation soapAction="http://tempuri.org/IMyNotesCommandService/ChangeSiteMountingInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignVendorToSitesInfo">
+      <soap:operation soapAction="http://tempuri.org/IMyNotesCommandService/AssignVendorToSitesInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPhotoToSite">
+      <soap:operation soapAction="http://tempuri.org/IMyNotesCommandService/AddPhotoToSite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrEditPhotoToSite">
+      <soap:operation soapAction="http://tempuri.org/IMyNotesCommandService/AddOrEditPhotoToSite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MyNotesCommandService">
+    <wsdl:port name="BasicHttpBinding_IMyNotesCommandService" binding="tns:BasicHttpBinding_IMyNotesCommandService">
+      <soap:address location="http://localhost:39531/MyNotesCommandService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

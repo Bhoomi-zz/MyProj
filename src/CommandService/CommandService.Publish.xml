@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="D:\LaqshyaCommandService" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="LaqshyaCommandService" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="False">
+    <file relUrl="Web.config" publishTime="10/01/2010 12:23:48" />
+    <file relUrl="bin/CommandService.dll" publishTime="10/01/2010 11:24:32" />
+    <file relUrl="bin/Domain.dll" publishTime="10/01/2010 11:24:30" />
+    <file relUrl="bin/Newtonsoft.Json.pdb" publishTime="08/02/2010 13:37:20" />
+    <file relUrl="bin/Commands.dll" publishTime="10/01/2010 11:24:29" />
+    <file relUrl="bin/ReadModel.dll" publishTime="10/01/2010 11:24:31" />
+    <file relUrl="bin/CommandService.pdb" publishTime="10/01/2010 11:24:32" />
+    <file relUrl="bin/Ncqrs.Config.StructureMap.dll" publishTime="07/02/2010 09:10:16" />
+    <file relUrl="bin/CommonDTOs.dll" publishTime="10/01/2010 11:23:27" />
+    <file relUrl="MyNotesCommandService.svc" publishTime="08/02/2010 13:37:20" />
+    <file relUrl="bin/ReadModel.pdb" publishTime="10/01/2010 11:24:31" />
+    <file relUrl="bin/Events.dll" publishTime="10/01/2010 11:24:28" />
+    <file relUrl="bin/StructureMap.dll" publishTime="08/02/2010 13:37:20" />
+    <file relUrl="bin/Ncqrs.xml" publishTime="10/01/2010 11:24:28" />
+    <file relUrl="bin/CommonDTOs.pdb" publishTime="10/01/2010 11:23:27" />
+    <file relUrl="bin/Newtonsoft.Json.dll" publishTime="08/02/2010 13:37:20" />
+    <file relUrl="bin/StructureMap.xml" publishTime="08/02/2010 13:37:20" />
+    <file relUrl="bin/Ncqrs.dll" publishTime="10/01/2010 11:24:27" />
+    <file relUrl="bin/Domain.pdb" publishTime="10/01/2010 11:24:29" />
+    <file relUrl="bin/Commands.pdb" publishTime="10/01/2010 11:24:29" />
+    <file relUrl="bin/SagaHandlers.dll" publishTime="10/01/2010 11:24:31" />
+    <file relUrl="bin/SagaHandlers.pdb" publishTime="10/01/2010 11:24:31" />
+    <file relUrl="bin/Events.pdb" publishTime="10/01/2010 11:24:28" />
+    <file relUrl="bin/Ncqrs.pdb" publishTime="10/01/2010 11:24:27" />
+  </publishProfile>
+  <publishProfile publishUrl="D:\LaqshyaApp" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="Laqshya" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="MyNotesCommandService" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="Web.config" publishTime="10/01/2010 15:33:07" />
+    <file relUrl="bin/CommandService.dll" publishTime="10/01/2010 15:21:47" />
+    <file relUrl="bin/Domain.dll" publishTime="10/01/2010 15:21:38" />
+    <file relUrl="bin/Newtonsoft.Json.pdb" publishTime="08/02/2010 13:37:20" />
+    <file relUrl="bin/Commands.dll" publishTime="10/01/2010 15:21:37" />
+    <file relUrl="bin/ReadModel.dll" publishTime="10/01/2010 15:21:46" />
+    <file relUrl="bin/CommandService.pdb" publishTime="10/01/2010 15:21:47" />
+    <file relUrl="bin/Ncqrs.Config.StructureMap.dll" publishTime="07/02/2010 09:10:16" />
+    <file relUrl="bin/CommonDTOs.dll" publishTime="10/01/2010 15:21:35" />
+    <file relUrl="MyNotesCommandService.svc" publishTime="08/02/2010 13:37:20" />
+    <file relUrl="bin/ReadModel.pdb" publishTime="10/01/2010 15:21:46" />
+    <file relUrl="bin/Events.dll" publishTime="10/01/2010 15:21:36" />
+    <file relUrl="bin/StructureMap.dll" publishTime="08/02/2010 13:37:20" />
+    <file relUrl="bin/Ncqrs.xml" publishTime="10/01/2010 15:21:33" />
+    <file relUrl="bin/CommonDTOs.pdb" publishTime="10/01/2010 15:21:35" />
+    <file relUrl="bin/Newtonsoft.Json.dll" publishTime="08/02/2010 13:37:20" />
+    <file relUrl="bin/StructureMap.xml" publishTime="08/02/2010 13:37:20" />
+    <file relUrl="bin/Ncqrs.dll" publishTime="10/01/2010 15:21:33" />
+    <file relUrl="bin/Domain.pdb" publishTime="10/01/2010 15:21:38" />
+    <file relUrl="bin/Commands.pdb" publishTime="10/01/2010 15:21:36" />
+    <file relUrl="bin/SagaHandlers.dll" publishTime="10/01/2010 15:21:46" />
+    <file relUrl="bin/SagaHandlers.pdb" publishTime="10/01/2010 15:21:46" />
+    <file relUrl="bin/Events.pdb" publishTime="10/01/2010 15:21:36" />
+    <file relUrl="bin/Ncqrs.pdb" publishTime="10/01/2010 15:21:33" />
+  </publishProfile>
+</publishData>

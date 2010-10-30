@@ -1,0 +1,603 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4DFE50BE-A76C-4FD2-904C-BD929FF0C32A}</ProjectGuid>
+    <ProjectTypeGuids>{F85E285D-A4E0-4152-9332-AB1D724D3325};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Website</RootNamespace>
+    <AssemblyName>Website</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Mvc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Microsoft.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Ncqrs, Version=0.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Ncqrs\Ncqrs.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\EmailController.cs" />
+    <Compile Include="Controllers\PhotoController.cs" />
+    <Compile Include="Controllers\PhotoUploadingController.cs" />
+    <Compile Include="Controllers\SiteMiscController.cs" />
+    <Compile Include="Controllers\BriefAllocationController.cs" />
+    <Compile Include="Controllers\BriefController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NoteController.cs" />
+    <Compile Include="Controllers\PlanController.cs" />
+    <Compile Include="Controllers\SharedController.cs" />
+    <Compile Include="Controllers\SiteController.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\JsonHelper.cs" />
+    <Compile Include="ImageUploader.ashx.cs">
+      <DependentUpon>ImageUploader.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\CommandService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Services\SharedDataService.cs" />
+    <Compile Include="ViewModel\AccountModels.cs" />
+    <Compile Include="ViewModel\BriefAllocationRegionAndCity.cs" />
+    <Compile Include="ViewModel\BriefAllocationViewModelForCreate.cs" />
+    <Compile Include="ViewModel\BriefAllocationViewModelForEdit.cs" />
+    <Compile Include="ViewModel\BriefAllocationViewModelForIndex.cs" />
+    <Compile Include="ViewModel\BriefViewModel.cs" />
+    <Compile Include="ViewModel\BriefViewModelIndex.cs" />
+    <Compile Include="ViewModel\EditBriefViewModel.cs" />
+    <Compile Include="ViewModel\Email\EmailDataViewModel.cs" />
+    <Compile Include="ViewModel\Email\EmailViewModel.cs" />
+    <Compile Include="ViewModel\Photo\PhotoViewModel.cs" />
+    <Compile Include="ViewModel\Photo\PlanAlbumIndexViewModel.cs" />
+    <Compile Include="ViewModel\Photo\PlanAlbumViewModel.cs" />
+    <Compile Include="ViewModel\Photo\PlanCityForPhotosViewModel.cs" />
+    <Compile Include="ViewModel\Photo\PlanPhotoAttachedToCityViewModel.cs" />
+    <Compile Include="ViewModel\Photo\PlanPhotoUploadingViewModel.cs" />
+    <Compile Include="ViewModel\Photo\PlanSiteAlbumViewModel.cs" />
+    <Compile Include="ViewModel\Photo\SiteAlbum.cs" />
+    <Compile Include="ViewModel\Plan\PlanAddDisplayInfoViewModel.cs" />
+    <Compile Include="ViewModel\Plan\PlanAddMountingInfoViewModel.cs" />
+    <Compile Include="ViewModel\Plan\PlanCityMainViewModel.cs" />
+    <Compile Include="ViewModel\Plan\PlanCityViewModel.cs" />
+    <Compile Include="ViewModel\Plan\PlanCreateViewModel.cs" />
+    <Compile Include="ViewModel\Plan\PlanEditViewModel.cs" />
+    <Compile Include="ViewModel\Plan\PlanIndexViewModel.cs" />
+    <Compile Include="ViewModel\Plan\PlanSite.cs" />
+    <Compile Include="ViewModel\Plan\PlanSiteViewModel.cs" />
+    <Compile Include="ViewModel\Plan\SiteVendorAssignmentViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\add.gif" />
+    <Content Include="Content\Brief.css" />
+    <Content Include="Content\BRIEFALLOCATION.css" />
+    <Content Include="Content\cancel.gif" />
+    <Content Include="Content\colors\blue.css" />
+    <Content Include="Content\delete.gif" />
+    <Content Include="Content\edit.gif" />
+    <Content Include="Content\jqModal.css" />
+    <Content Include="Content\jquery-ui-1.8.1.custom.css" />
+    <Content Include="Content\jquery-ui-1.8.5.custom.css" />
+    <Content Include="Content\jquery.autocomplete.css" />
+    <Content Include="Content\next.gif" />
+    <Content Include="Content\ok.gif" />
+    <Content Include="Content\previous.gif" />
+    <Content Include="Content\reset.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\ui.jqgrid.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="ImageUploader.ashx" />
+    <None Include="Scripts\themes\steel\images\._sprite5.psd" />
+    <None Include="Scripts\themes\steel\images\sprite5.psd" />
+    <None Include="Scripts\Uploadify\uploadify.fla" />
+    <None Include="Service References\CommandService\configuration91.svcinfo" />
+    <None Include="Service References\CommandService\configuration.svcinfo" />
+    <None Include="Service References\CommandService\MyNotesCommandService1.wsdl" />
+    <None Include="Service References\CommandService\MyNotesCommandService10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommandService\MyNotesCommandService11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommandService\MyNotesCommandService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommandService\MyNotesCommandService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommandService\MyNotesCommandService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommandService\MyNotesCommandService9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommandService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Resources\Images\autocomplete_spinner.gif" />
+    <Content Include="Resources\Images\background.png" />
+    <Content Include="Resources\Images\button.png" />
+    <Content Include="Resources\Images\button_browse.png" />
+    <Content Include="Resources\Images\button_browse_selected.png" />
+    <Content Include="Resources\Images\button_selected.png" />
+    <Content Include="Resources\Images\calender_next.png" />
+    <Content Include="Resources\Images\calender_prev.png" />
+    <Content Include="Resources\Images\colors\blue\button_highlight.png" />
+    <Content Include="Resources\Images\colors\blue\button_highlight_selected.png" />
+    <Content Include="Resources\Images\colors\blue\button_home.png" />
+    <Content Include="Resources\Images\colors\blue\header_inner.png" />
+    <Content Include="Resources\Images\colors\blue\header_inner_corners.png" />
+    <Content Include="Resources\Images\colors\blue\login_corners.png" />
+    <Content Include="Resources\Images\colors\blue\menu_arrow.png" />
+    <Content Include="Resources\Images\colors\blue\menu_border.png" />
+    <Content Include="Resources\Images\colors\blue\menu_l_selected.png" />
+    <Content Include="Resources\Images\colors\blue\menu_r_selected.png" />
+    <Content Include="Resources\Images\colors\blue\menu_selected.png" />
+    <Content Include="Resources\Images\colors\blue\quick_l.png" />
+    <Content Include="Resources\Images\colors\blue\quick_l_selected.png" />
+    <Content Include="Resources\Images\colors\blue\quick_r.png" />
+    <Content Include="Resources\Images\colors\blue\quick_r_selected.png" />
+    <Content Include="Resources\Images\colors\blue\title.png" />
+    <Content Include="Resources\Images\colors\blue\title_link.png" />
+    <Content Include="Resources\Images\colors\blue\title_tab_selected.png" />
+    <Content Include="Resources\Images\content.png" />
+    <Content Include="Resources\Images\content_fixed.png" />
+    <Content Include="Resources\Images\content_left_top.png" />
+    <Content Include="Resources\Images\delete.jpg" />
+    <Content Include="Resources\Images\edit_icon.png" />
+    <Content Include="Resources\Images\header_background.png" />
+    <Content Include="Resources\Images\icons\application_double.png" />
+    <Content Include="Resources\Images\icons\autocomplete.gif" />
+    <Content Include="Resources\Images\icons\calendar.png" />
+    <Content Include="Resources\Images\icons\cog.png" />
+    <Content Include="Resources\Images\icons\combobox.gif" />
+    <Content Include="Resources\Images\icons\cross.png" />
+    <Content Include="Resources\Images\icons\error.png" />
+    <Content Include="Resources\Images\icons\exclamation.png" />
+    <Content Include="Resources\Images\icons\house.png" />
+    <Content Include="Resources\Images\icons\leftarrow.png" />
+    <Content Include="Resources\Images\icons\notice.png" />
+    <Content Include="Resources\Images\icons\page_white_copy.png" />
+    <Content Include="Resources\Images\icons\rightarrow.png" />
+    <Content Include="Resources\Images\icons\success.png" />
+    <Content Include="Resources\Images\icons\tick.png" />
+    <Content Include="Resources\Images\icons\warning.png" />
+    <Content Include="Resources\Images\icons\world_link.png" />
+    <Content Include="Resources\Images\Laqshya.jpg" />
+    <Content Include="Resources\Images\LaqshyaLogo.bmp" />
+    <Content Include="Resources\Images\login.png" />
+    <Content Include="Resources\Images\logo.png" />
+    <Content Include="Resources\Images\menu.png" />
+    <Content Include="Resources\Images\menu_l.png" />
+    <Content Include="Resources\Images\menu_minus.png" />
+    <Content Include="Resources\Images\menu_plus.png" />
+    <Content Include="Resources\Images\menu_r.png" />
+    <Content Include="Resources\Images\minus.png" />
+    <Content Include="Resources\Images\pager.png" />
+    <Content Include="Resources\Images\pager_selected.png" />
+    <Content Include="Resources\Images\plus.png" />
+    <Content Include="Resources\Images\revert.gif" />
+    <Content Include="Resources\Images\save_icon.gif" />
+    <Content Include="Resources\Images\ui\calendar.png" />
+    <Content Include="Resources\Images\ui\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Resources\Images\ui\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Resources\Images\ui\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Resources\Images\ui\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Resources\Images\ui\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Resources\Images\ui\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Resources\Images\ui\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Resources\Images\ui\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Resources\Images\ui\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Resources\Images\ui\ui-icons_222222_256x240.png" />
+    <Content Include="Resources\Images\ui\ui-icons_228ef1_256x240.png" />
+    <Content Include="Resources\Images\ui\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Resources\Images\ui\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Resources\Images\ui\ui-icons_ffffff_256x240.png" />
+    <Content Include="Scripts\BriefAllocation.js" />
+    <Content Include="Scripts\cancel.png" />
+    <Content Include="Scripts\ChangeDisplayInfo.js" />
+    <Content Include="Scripts\ChangeMountingInfo.js" />
+    <Content Include="Scripts\ChangeVendorAssignment.js" />
+    <Content Include="Scripts\common.js" />
+    <Content Include="Scripts\date.js" />
+    <Content Include="Scripts\excanvas.min.js" />
+    <Content Include="Scripts\grid.locale-en.js" />
+    <Content Include="Scripts\images\empty.gif" />
+    <Content Include="Scripts\images\help_panel.png" />
+    <Content Include="Scripts\images\left.png" />
+    <Content Include="Scripts\images\left_empty.png" />
+    <Content Include="Scripts\images\left_eng.png" />
+    <Content Include="Scripts\images\left_prev.png" />
+    <Content Include="Scripts\images\popup_ajax_loader.gif" />
+    <Content Include="Scripts\images\right.png" />
+    <Content Include="Scripts\images\right_empty.png" />
+    <Content Include="Scripts\images\right_eng.png" />
+    <Content Include="Scripts\images\sprites.png" />
+    <Content Include="Scripts\jqDnR.js" />
+    <Content Include="Scripts\jqModal.js" />
+    <Content Include="Scripts\jqModal_old.js" />
+    <Content Include="Scripts\jquery-1.3.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.3.1.js" />
+    <Content Include="Scripts\jquery-1.3.1.min-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.3.1.min.js" />
+    <Content Include="Scripts\jquery-1.3.2-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.3.2.js" />
+    <Content Include="Scripts\jquery-1.3.2.min-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.3.2.min.js" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-1.4.2.js" />
+    <Content Include="Scripts\jquery-1.4.2.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.5.custom.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.custom.min.js" />
+    <Content Include="Scripts\jquery-ui.selectmenu.js" />
+    <Content Include="Scripts\jquery.autocomplete.css" />
+    <Content Include="Scripts\jquery.autocomplete.js" />
+    <Content Include="Scripts\jquery.autocomplete.min.js" />
+    <Content Include="Scripts\jquery.dateFormat-1.0.js" />
+    <Content Include="Scripts\jquery.flot.min.js" />
+    <Content Include="Scripts\jquery.fogLoader.0.9.1\images\pbar.gif" />
+    <Content Include="Scripts\jquery.fogLoader.0.9.1\images\pbar1.gif" />
+    <Content Include="Scripts\jquery.fogLoader.0.9.1\jquery.fogLoader.0.9.1.js" />
+    <Content Include="Scripts\jquery.fogLoader.0.9.1\jquery.fogLoader.0.9.1.min.js" />
+    <Content Include="Scripts\jquery.fogLoader.0.9.1\jquery.fogLoader.0.9.1.pack.js" />
+    <Content Include="Scripts\jquery.format.1.04.js" />
+    <Content Include="Scripts\jquery.jqGrid.js" />
+    <Content Include="Scripts\jquery.jqGrid.min.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.maskedinput-1.2.2.js" />
+    <Content Include="Scripts\jquery.maskedinput-1.2.2.min.js" />
+    <Content Include="Scripts\jquery.media.js" />
+    <Content Include="Scripts\jquery.metadata.min.js" />
+    <Content Include="Scripts\jquery.ui.selectmenu.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.yoxview-2.09.js" />
+    <Content Include="Scripts\jquery.yoxview-2.09.min.js" />
+    <Content Include="Scripts\js\grid.base.js" />
+    <Content Include="Scripts\js\grid.celledit.js" />
+    <Content Include="Scripts\js\grid.common.js" />
+    <Content Include="Scripts\js\grid.custom.js" />
+    <Content Include="Scripts\js\grid.formedit.js" />
+    <Content Include="Scripts\js\grid.import.js" />
+    <Content Include="Scripts\js\grid.inlinedit.js" />
+    <Content Include="Scripts\js\grid.jqueryui.js" />
+    <Content Include="Scripts\js\grid.locale-bg.js" />
+    <Content Include="Scripts\js\grid.locale-de.js" />
+    <Content Include="Scripts\js\grid.locale-dk.js" />
+    <Content Include="Scripts\js\grid.locale-el.js" />
+    <Content Include="Scripts\js\grid.locale-en.js" />
+    <Content Include="Scripts\js\grid.locale-fa.js" />
+    <Content Include="Scripts\js\grid.locale-fi.js" />
+    <Content Include="Scripts\js\grid.locale-fr.js" />
+    <Content Include="Scripts\js\grid.locale-is.js" />
+    <Content Include="Scripts\js\grid.locale-it.js" />
+    <Content Include="Scripts\js\grid.locale-pl.js" />
+    <Content Include="Scripts\js\grid.locale-pt-br.js" />
+    <Content Include="Scripts\js\grid.locale-pt.js" />
+    <Content Include="Scripts\js\grid.locale-ru.js" />
+    <Content Include="Scripts\js\grid.locale-sp.js" />
+    <Content Include="Scripts\js\grid.locale-tr.js" />
+    <Content Include="Scripts\js\grid.postext.js" />
+    <Content Include="Scripts\js\grid.setcolumns.js" />
+    <Content Include="Scripts\js\grid.subgrid.js" />
+    <Content Include="Scripts\js\grid.tbltogrid.js" />
+    <Content Include="Scripts\js\grid.treegrid.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-en.js" />
+    <Content Include="Scripts\js\jqDnR.js" />
+    <Content Include="Scripts\js\jqModal.js" />
+    <Content Include="Scripts\js\jqModal_old.js" />
+    <Content Include="Scripts\js\jquery-1.4.2.min.js" />
+    <Content Include="Scripts\js\jquery.fmatter.js" />
+    <Content Include="Scripts\js\jquery.jqGrid.min.js" />
+    <Content Include="Scripts\js\jquery.js" />
+    <Content Include="Scripts\js\jquery.searchFilter.js" />
+    <Content Include="Scripts\js\jquery.tablednd.js" />
+    <Content Include="Scripts\js\json2.js" />
+    <Content Include="Scripts\js\JsonXml.js" />
+    <Content Include="Scripts\js\min\grid.base-min.js" />
+    <Content Include="Scripts\js\min\grid.celledit-min.js" />
+    <Content Include="Scripts\js\min\grid.common-min.js" />
+    <Content Include="Scripts\js\min\grid.custom-min.js" />
+    <Content Include="Scripts\js\min\grid.formedit-min.js" />
+    <Content Include="Scripts\js\min\grid.import-min.js" />
+    <Content Include="Scripts\js\min\grid.inlinedit-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-bg-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-de-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-dk-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-el-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-en-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-fa-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-fi-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-fr-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-is-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-it-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-pl-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-pt-br-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-pt-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-ru-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-sp-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-tr-min.js" />
+    <Content Include="Scripts\js\min\grid.postext-min.js" />
+    <Content Include="Scripts\js\min\grid.setcolumns-min.js" />
+    <Content Include="Scripts\js\min\grid.subgrid-min.js" />
+    <Content Include="Scripts\js\min\grid.tbltogrid-min.js" />
+    <Content Include="Scripts\js\min\grid.treegrid-min.js" />
+    <Content Include="Scripts\js\min\jquery.fmatter-min.js" />
+    <Content Include="Scripts\js\min\json2-min.js" />
+    <Content Include="Scripts\js\min\JsonXml-min.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\PhotoViewer.js" />
+    <Content Include="Scripts\Plan.js" />
+    <Content Include="Scripts\PlanCities.js" />
+    <Content Include="Scripts\PlanRegions.js" />
+    <Content Include="Scripts\PlanSite.js" />
+    <Content Include="Scripts\SiteAlbum.js" />
+    <Content Include="Scripts\smooth.chart.js" />
+    <Content Include="Scripts\smooth.form.js" />
+    <Content Include="Scripts\smooth.js" />
+    <Content Include="Scripts\smooth.menu.js" />
+    <Content Include="Scripts\smooth.table.js" />
+    <Content Include="Scripts\themes\grid.css" />
+    <Content Include="Scripts\themes\steel\images\._sprite5.png" />
+    <Content Include="Scripts\themes\steel\images\Arrow2 Down.png" />
+    <Content Include="Scripts\themes\steel\images\Arrow2 Up.png" />
+    <Content Include="Scripts\themes\steel\images\bg.gif" />
+    <Content Include="Scripts\themes\steel\images\cd_run.gif" />
+    <Content Include="Scripts\themes\steel\images\control_090.png" />
+    <Content Include="Scripts\themes\steel\images\control_270.png" />
+    <Content Include="Scripts\themes\steel\images\dirty.gif" />
+    <Content Include="Scripts\themes\steel\images\down.gif" />
+    <Content Include="Scripts\themes\steel\images\fhbg.gif" />
+    <Content Include="Scripts\themes\steel\images\find.gif" />
+    <Content Include="Scripts\themes\steel\images\find1.gif" />
+    <Content Include="Scripts\themes\steel\images\first.gif" />
+    <Content Include="Scripts\themes\steel\images\first.png" />
+    <Content Include="Scripts\themes\steel\images\folder.png" />
+    <Content Include="Scripts\themes\steel\images\headerleft1.gif" />
+    <Content Include="Scripts\themes\steel\images\headerright1.gif" />
+    <Content Include="Scripts\themes\steel\images\ico-close.gif" />
+    <Content Include="Scripts\themes\steel\images\last.gif" />
+    <Content Include="Scripts\themes\steel\images\last.png" />
+    <Content Include="Scripts\themes\steel\images\line3.gif" />
+    <Content Include="Scripts\themes\steel\images\loading.gif" />
+    <Content Include="Scripts\themes\steel\images\minus.gif" />
+    <Content Include="Scripts\themes\steel\images\next.gif" />
+    <Content Include="Scripts\themes\steel\images\next.png" />
+    <Content Include="Scripts\themes\steel\images\nochild.gif" />
+    <Content Include="Scripts\themes\steel\images\odown.gif" />
+    <Content Include="Scripts\themes\steel\images\off-first.gif" />
+    <Content Include="Scripts\themes\steel\images\off-last.gif" />
+    <Content Include="Scripts\themes\steel\images\off-next.gif" />
+    <Content Include="Scripts\themes\steel\images\off-prev.gif" />
+    <Content Include="Scripts\themes\steel\images\oup.gif" />
+    <Content Include="Scripts\themes\steel\images\plus.gif" />
+    <Content Include="Scripts\themes\steel\images\prev.gif" />
+    <Content Include="Scripts\themes\steel\images\prev.png" />
+    <Content Include="Scripts\themes\steel\images\refresh.gif" />
+    <Content Include="Scripts\themes\steel\images\refresh1.gif" />
+    <Content Include="Scripts\themes\steel\images\resize.gif" />
+    <Content Include="Scripts\themes\steel\images\row_add.gif" />
+    <Content Include="Scripts\themes\steel\images\row_add1.gif" />
+    <Content Include="Scripts\themes\steel\images\row_delete.gif" />
+    <Content Include="Scripts\themes\steel\images\row_delete1.gif" />
+    <Content Include="Scripts\themes\steel\images\row_edit.gif" />
+    <Content Include="Scripts\themes\steel\images\row_edit1.gif" />
+    <Content Include="Scripts\themes\steel\images\sort_asc.gif" />
+    <Content Include="Scripts\themes\steel\images\sort_desc.gif" />
+    <Content Include="Scripts\themes\steel\images\spacer.gif" />
+    <Content Include="Scripts\themes\steel\images\sprite.png" />
+    <Content Include="Scripts\themes\steel\images\sprite5.png" />
+    <Content Include="Scripts\themes\steel\images\tab_close-on.gif" />
+    <Content Include="Scripts\themes\steel\images\tree_leaf.gif" />
+    <Content Include="Scripts\themes\steel\images\tree_minus.gif" />
+    <Content Include="Scripts\themes\steel\images\tree_plus.gif" />
+    <Content Include="Scripts\themes\steel\images\up.gif" />
+    <Content Include="Scripts\themes\steel\images\wbg.gif" />
+    <Content Include="Scripts\ui.multiselect.js" />
+    <Content Include="Scripts\Uploadify\cancel.png" />
+    <Content Include="Scripts\Uploadify\jquery-1.4.2.js" />
+    <Content Include="Scripts\Uploadify\jquery.uploadify.v2.1.0.js" />
+    <Content Include="Scripts\Uploadify\jquery.uploadify.v2.1.0.min.js" />
+    <Content Include="Scripts\Uploadify\swfobject.js" />
+    <Content Include="Scripts\Uploadify\uploadify.css" />
+    <Content Include="Scripts\Uploadify\uploadify.swf" />
+    <Content Include="Scripts\yox.js" />
+    <Content Include="Scripts\yoxview-init.js" />
+    <Content Include="Scripts\yoxview.css" />
+    <None Include="Service References\CommandService\MyNotesCommandService1.disco" />
+    <Content Include="ViewPage1.aspx" />
+    <Content Include="Views\Account\ChangePassword.aspx" />
+    <Content Include="Views\Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Views\Account\LogOn.aspx" />
+    <Content Include="Views\Account\Register.aspx" />
+    <Content Include="Views\BriefAllocation\Create.aspx" />
+    <Content Include="Views\BriefAllocation\Edit.aspx" />
+    <Content Include="Views\BriefAllocation\Index.aspx" />
+    <Content Include="Views\Brief\AddBrief.aspx" />
+    <Content Include="Views\Brief\Edit.aspx" />
+    <Content Include="Views\Brief\Index.aspx" />
+    <Content Include="Views\Email\Index.aspx" />
+    <Content Include="Views\Email\SendEmail.aspx" />
+    <Content Include="Views\Note\Add.aspx" />
+    <Content Include="Views\Note\Edit.aspx" />
+    <Content Include="Views\Note\Index.aspx" />
+    <Content Include="Views\PhotoUploading\CreatePlanAlbum.aspx" />
+    <Content Include="Views\PhotoUploading\PlansWithoutAlbumsIndex.aspx" />
+    <Content Include="Views\PhotoUploading\UploadIndex.aspx" />
+    <Content Include="Views\PhotoUploading\UploadPhotoToCity.aspx" />
+    <Content Include="Views\PhotoUploading\UploadPhotoToPlan.aspx" />
+    <Content Include="Views\Photo\Index.aspx" />
+    <Content Include="Views\Photo\PhotoViewerIndex.aspx" />
+    <Content Include="Views\Photo\PlanPhotoViewer.aspx" />
+    <Content Include="Views\Photo\SiteAlbum.aspx" />
+    <Content Include="Views\Plan\Create.aspx" />
+    <Content Include="Views\Plan\Edit.aspx" />
+    <Content Include="Views\Plan\Index.aspx" />
+    <Content Include="Views\Plan\PlanRegionCity.aspx" />
+    <Content Include="Views\Plan\PlanRegionIndex.aspx" />
+    <Content Include="Views\Plan\PlanRegionsMainView.aspx" />
+    <Content Include="Views\Shared\EditorTemplates\DateTime.ascx" />
+    <Content Include="Views\Shared\LogOnUserControl.ascx" />
+    <Content Include="Views\Site\ChangeDisplayInfo.aspx" />
+    <Content Include="Views\Site\ChangeMountingInfo.aspx" />
+    <Content Include="Views\Site\IndexForDisplayInfoChange.aspx" />
+    <Content Include="Views\Site\IndexForMountingInfoChange.aspx" />
+    <Content Include="Views\SiteMisc\IndexForVendorInfoChange.aspx" />
+    <Content Include="Views\Site\PlanSite.aspx" />
+    <Content Include="Views\SiteMisc\SiteVendorAssignment.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Views\Home\About.aspx" />
+    <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Shared\Error.aspx" />
+    <Content Include="Views\Shared\Site.Master" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Uploads\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CommonDTOs\CommonDTOs.csproj">
+      <Project>{E6E792D8-07B6-444B-A719-6062A3E687B9}</Project>
+      <Name>CommonDTOs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvcGridView.Extensions\MvcGridView.Extensions.csproj">
+      <Project>{770C0743-9498-4982-BF8B-C52B8B42FF57}</Project>
+      <Name>MvcGridView.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReadModel\ReadModel.csproj">
+      <Project>{D01CE8F6-800E-44CC-886B-F862B10E1396}</Project>
+      <Name>ReadModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Commands\Commands.csproj">
+      <Project>{CF0635EB-DFA4-4E82-B245-A0F125183E08}</Project>
+      <Name>Commands</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CommandService\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>50242</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/LaqshyaApp</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

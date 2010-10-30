@@ -1,0 +1,205 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <link href= "<%= Url.Content("~/Content/Site.css")%>" rel="stylesheet"  type="text/css" />   
+    <!-- Removed jqeruy ui Custom.css that conflicts with style.css which is in template--> 
+    <link href= "<%= Url.Content("~/Content/jquery-ui-1.8.1.custom.css")%>" rel="stylesheet" type="text/css" />
+    <link href="<%= Url.Content("~/Content/reset.css") %>" rel="stylesheet" type="text/css" />
+
+    <link href="<%= Url.Content("~/Content/style.css" )%> "rel="stylesheet" type="text/css" />
+    <link href="<%= Url.Content("~/Content/colors/blue.css")%> "rel="stylesheet" type="text/css" />    
+    
+    <%--<script src="<%= Url.Content("~/Scripts/js/jquery.js") %>" type="text/javascript"></script>--%>    
+    <script src="<%= Url.Content("~/Scripts/js/jquery-1.4.2.min.js" ) %>" type="text/javascript"></script>
+    <script src="<%= Url.Content("~/Scripts/jquery-ui-1.8.custom.min.js") %>" type="text/javascript"></script>  
+    <%--<script src="<%= Url.Content("~/Scripts/jquery-ui-1.8.5.custom.min.js") %>"  type="text/javascript"></script>--%>
+
+    <script src="<%= Url.Content("~/Scripts/jquery-ui.selectmenu.js") %>" type="text/javascript"></script>
+        <script src="<%= Url.Content("~/Scripts/jquery.flot.min.js") %>" type="text/javascript"></script>
+
+   <script src="<%= Url.Content("~/Scripts/smooth.js") %>" type="text/javascript"></script>    
+    <script src="<%= Url.Content("~/Scripts/smooth.menu.js") %>" type="text/javascript"></script>
+    <script src="<%= Url.Content("~/Scripts/smooth.table.js") %>" type="text/javascript"></script>
+    <script src="<%= Url.Content("~/Scripts/smooth.form.js") %>" type="text/javascript"></script>
+     <script src="<%= Url.Content("~/Scripts/jquery.fogLoader.0.9.1/jquery.fogLoader.0.9.1.pack.js") %>"  type="text/javascript"></script>    
+   <script type="text/javascript" src="<%= Url.Content("~/Scripts/common.js") %>" ></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            style_path = "resources/css/colors";
+            $("input[Title=DateTimePicker]").datepicker({ dateFormat: 'dd/mm/yy' });
+            $("#box-tabs, #box-left-tabs").tabs();
+        
+        });
+        function HideLeftPane() {
+            $("#menu").hide();
+            $("#left").css("width", "65px");
+            $("#right").css("margin", "-10px 60px 0 70px");
+            $("#content").css("background", "url(\"../resources/images/content.png\") no-repeat scroll left top transparent");
+            $("#rightarrowimg").css("visibility", "visible");
+            $("#leftArrowimg").css("visibility", "hidden");
+        }
+        function BringLeftPane() {
+            $("#menu").show();
+            $("#left").css("width", "280px");
+            $("#right").css("margin", "-10px 60px 0 290px");
+            $("#content").css("background", "url(\"../resources/images/content.png\") repeat-y scroll left top transparent");
+            $("#rightarrowimg").css("visibility", "hidden");
+            $("#leftArrowimg").css("visibility", "visible");
+        }
+		</script> 
+        <%="<script type=\"text/javascript\">var rootPath = '" + Url.Content("~/") + "';</script>" %>
+</head>
+
+<body>    
+    <!-- header --> 
+		<div id="header"> 
+			<!-- logo --> 
+			<div id="logo"> 
+				<h1><a href="../../Default.aspx" title="Smooth Admin"><img src=<%= Url.Content("~/Resources/Images/Laqshya.jpg") %> alt="Smooth Admin" /></a></h1> 
+
+			</div> 
+			<!-- end logo --> 
+			<!-- user --> 
+			<ul id="user"> 
+				<li class="first"><a href="">Account</a></li> 
+				<li><a href="">Messages (0)</a></li> 
+				<li> <% Html.RenderPartial( "LogOnUserControl"); %></li> 
+				<li class="highlight last"><a href="">View Site</a></li> 
+			</ul> 
+			<!-- end user --> 
+			<div id="header-inner"> 
+				<div id="home"> 
+					<a href="../../Default.aspx" title="Home"></a> 
+				</div> 
+				<!-- quick --> 
+				<ul id="quick"> 					
+					<li> 
+						<a href="#" title="Brief"><span>Briefs</span></a> 
+						<ul> 
+							<li><%: Html.ActionLink("Index", "Index", "Brief")%></li> 
+							<li><%: Html.ActionLink("Create Brief", "Add", "Brief")%></li>                             
+						</ul> 
+					</li> 					
+					<li> 
+						<a href="" title="Brief Allocation"><span>Brief Allocation</span></a> 
+						<ul> 
+							<li><%: Html.ActionLink("Index", "Index", "BriefAllocation")%></li> 
+							<li class="last"><%: Html.ActionLink("Allocate Brief", "Create", "BriefAllocation")%></li>  							
+						</ul> 
+					</li> 
+                    <li> 
+						<a href="" title="Plan"><span>Plan</span></a> 
+						<ul> 
+							<li><%: Html.ActionLink("Index", "Index", "Plan")%></li> 							
+                            <li><%: Html.ActionLink("Create Plan", "Create", "Plan")%></li> 
+                            <li><%: Html.ActionLink("Create Region/City/Site in plan", "PlanRegionIndex", "Plan")%></li> 							
+                            <li><%: Html.ActionLink("Planning & Buying", "IndexForVendorInfoChange", "SiteMisc")%></li> 							
+                            <li><%: Html.ActionLink("Create Plan Album", "PlansWithoutAlbumsIndex", "PhotoUploading")%></li> 							
+                            <li><%: Html.ActionLink("Upload Photos", "UploadIndex", "PhotoUploading")%></li> 							
+                            <li><%: Html.ActionLink("Attach Photos to Site", "Index", "Photo" )%></li> 
+                            <li><%: Html.ActionLink("Site Album", "PhotoViewerIndex", "Photo")%></li> 							                            
+                            <li><%: Html.ActionLink("Email", "Index", "Email")%></li> 	
+						</ul> 
+					</li> 
+                    <li> 
+						<a href="" title="Plan"><span>Photos</span></a> 
+						<ul> 
+							<li><%: Html.ActionLink("Site Album", "PhotoViewerIndex", "Photo")%></li> 							                            
+						</ul> 
+					</li> 					
+					<li> 
+						<a href="" title="Settings"><span class="icon"><img src= "<%= Url.Content("~/Resources/Images/icons/cog.png") %>" alt="Settings" /></span><span>Settings</span></a> 
+						<ul> 
+							<li><a href="#">Manage Settings</a></li> 
+							<li class="last"><a href="#">New Setting</a></li> 
+						</ul> 
+					</li> 
+				</ul> 
+				<!-- end quick --> 
+				<div class="corner tl"></div> 
+				<div class="corner tr"></div> 
+			</div> 
+		</div> 
+		<!-- end header --> 
+        <!-- content --> 
+		<div id="content"> 
+			<!-- end content / left --> 
+			<div id="left"> 
+                <div style="float:right; padding:2px 2px 0 0"><input type="image" id="leftArrowimg" src = "<%= Url.Content("~/Resources/Images/icons/leftarrow.png" ) %>" onclick ="javascript:HideLeftPane(); return false;" alt="Hide left Pane"/>
+                            <input type="image" id="rightarrowimg" style="visibility: hidden" src ="<%= Url.Content("~/Resources/Images/icons/rightarrow.png" ) %>" onclick ="javascript:BringLeftPane(); return false;" alt="Bring left Pane"/></div> 
+
+				<div id="menu"> 
+                
+					<h6 id="h-menu-brief"><a href="#brief"><span>Brief</span></a></h6> 
+                    
+					<ul id="menu-brief" class="closed"> 												
+						<li class="collapsible"> 
+							<a href="#" class="plus">Brief</a>                             
+							<ul class="opened"> 								
+								<li><%: Html.ActionLink("Recent" , "Index", "Brief")%></li> 
+                                <li><%: Html.ActionLink("All" , "Index", "Brief")%></li> 
+                                <li class="last"><%: Html.ActionLink("Add New", "Add", "Brief")%></li> 
+							</ul> 
+						</li> 
+						<li class="collapsible last"> 
+							<a href="#" class="plus">Brief Allocations</a> 
+							<ul class="collapsed"> 								
+                                <li><%: Html.ActionLink("Recent", "Index", "BriefAllocation")%></li> 
+                                <li><%: Html.ActionLink("All", "Index", "BriefAllocation")%></li>                                 
+                                <li><%: Html.ActionLink("Add New", "Create", "BriefAllocation")%></li> 				                                
+							</ul> 
+						</li> 
+					</ul> 
+					<h6 id="h-menu-plan"><a href="#plan"><span>Plan</span></a></h6> 
+					<ul id="menu-plan" class="closed"> 
+						<li><%: Html.ActionLink("Recent", "Recent", "Plan")%></li> 
+						<li><%: Html.ActionLink("View All", "Index", "Plan")%></li> 
+                        <li><%: Html.ActionLink("Create Plan", "Create", "Plan")%></li> 
+                        <li><div id="EditPlanLink"></div></li>                        
+                        <li> <div id="PlanRegionsLink"></div> </li>
+                        <li> <div id="PlanCitiesLink"></div> </li>
+                        <li> <div id="PlanSitesLink"></div> </li>
+                        <li> <div id="PlanSitePlanningAndBuyingLink"></div> </li>
+						<li class="collapsible last"> 
+							<a href="#" class="plus">Help</a> 
+							<ul class="collapsed"> 
+								<li><a href="">How to add a Plan</a></li> 
+								<li class="last"><a href="">How to add a new Site</a></li> 
+							</ul> 
+						</li> 
+					</ul> 
+					<h6 id="h-menu-events"><a href="#events"><span>Operations</span></a></h6> 
+					<ul id="menu-events" class="closed"> 
+						<li><a href="">Manage Operations</a></li> 
+						<li class="last"><a href="">New Operation</a></li> 
+					</ul> 
+					<h6 id="h-menu-links"><a href="#links"><span>Financials</span></a></h6> 
+					<ul id="menu-links" class="closed"> 
+						<li><a href="">Invoicing</a></li> 
+						<li class="last"><a href="">Collection</a></li> 
+					</ul> 
+					<h6 id="h-menu-settings"><a href="#settings"><span>Settings</span></a></h6> 
+					<ul id="menu-settings" class="closed"> 
+						<li><a href="">Manage Settings</a></li> 
+						<li class="last"><a href="">New Setting</a></li> 
+					</ul> 
+				</div> 
+				<div id="date-picker"></div> 
+			</div> 
+           
+			<!-- end content / left --> 
+            <!-- content / right --> 
+			<div id="right"> 
+				<!-- table --> 		   					
+                             
+            
+            
+                   <asp:ContentPlaceHolder ID="MainContent" runat="server" />                                    
+          </div>   
+       </div> 
+</body>
+</html>
