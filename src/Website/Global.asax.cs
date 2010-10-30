@@ -17,6 +17,7 @@ namespace Website
                 "{controller}.aspx/{action}/{id}", // URL with parameters
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
             );
+
             routes.MapRoute(
                 "Root",
                "{controller}/{action}/{id}", // URL with parameters
@@ -27,7 +28,7 @@ namespace Website
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-
+              
             RegisterRoutes(RouteTable.Routes);
             log4net.Config.XmlConfigurator.Configure();
            // ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
