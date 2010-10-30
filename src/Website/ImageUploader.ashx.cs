@@ -15,6 +15,10 @@ namespace Website
         {
             try
             {
+<<<<<<< HEAD
+=======
+		//New comment to test
+>>>>>>> a13518757f09a089053c90ae6968a5da49acd900
                 HttpPostedFile file = context.Request.Files["Filedata"];
 
                 string planId = context.Request["PlanId"].ToString();

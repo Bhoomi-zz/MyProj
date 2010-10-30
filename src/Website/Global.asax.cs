@@ -29,6 +29,10 @@ namespace Website
         {
             //Testing only
             //Second Comment...
+<<<<<<< HEAD
+=======
+            // Third comment......
+>>>>>>> a13518757f09a089053c90ae6968a5da49acd900
             AreaRegistration.RegisterAllAreas();
               
             RegisterRoutes(RouteTable.Routes);
